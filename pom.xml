@@ -8,7 +8,7 @@
         <artifactId>axj</artifactId>
         <version>1.0</version>
     </parent>
-    <artifactId>blessing-back</artifactId>
+    <artifactId>BlessingBack</artifactId>
     <version>0.1</version>
     <packaging>pom</packaging>
 
