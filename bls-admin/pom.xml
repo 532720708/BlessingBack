@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.absir</groupId>
-        <artifactId>blessing-back</artifactId>
+        <artifactId>BlessingBack</artifactId>
         <version>0.1</version>
     </parent>
     <artifactId>bls-admin</artifactId>
