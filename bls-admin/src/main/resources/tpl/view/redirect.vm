@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <title>#(redirect.name)</title>
+</head>
+<style type="text/css">
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    .f100 {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0
+    }
+
+    .after {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        width: 80px;
+        text-align: center;
+        height: 25px;
+        line-height: 24px;
+        z-index: 1000;
+        font-style: normal;
+        color: #FFFFFF;
+        font-family: "microsoft yahei";
+        /*font-size: 1.4rem;*/
+        /*border: 1px solid #000;*/
+        border-radius: 12px;
+        text-decoration: none;
+        background-color: rgba(0, 0, 0, .3);
+    }
+
+    .after:active {
+        color: #FFFFFF;
+    }
+
+    .after:hover {
+        color: #FFFFFF;
+    }
+</style>
+<body>
+<div class="f100">
+    <div style="height: 100%;display: flex;justify-items: center">
+        <img src="#(PAG.uploadUrl(redirect.background))" style="max-height: 100%; min-width: 100%"/>
+    </div>
+</div>
+<div style="position: relative; float:right; font-size: 15px; margin: 16px 16px 0 0">
+    <a class="after" onclick="skip()">跳过 <span id="left">3</span>s</a>
+</div>
+</body>
+</html>
+
+<script type="text/javascript">
+    var left = document.getElementById('left')
+    window.skip = function () {
+        var token = '#(token)'
+        var url = '#(redirect.url)'.replace('$token', token ? encodeURIComponent(token) : '')
+        location.replace(url)
+    }
+
+    var leftS = parseInt(left.innerHTML)
+    var leftI = setInterval(function () {
+        if (leftS <= 1) {
+            leftS = 1
+            skip()
+            clearInterval(leftI)
+
+        } else {
+            leftS--
+        }
+
+        left.innerHTML = leftS
+
+    }, 1000)
+
+</script>

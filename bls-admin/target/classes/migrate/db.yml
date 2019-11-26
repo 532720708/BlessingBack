@@ -1,0 +1,13 @@
+uc:
+  url: jdbc:mysql://testaccount.yiyitop.com:3306/bntweb_yiyi_usercenter?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC&autoReconnect=true
+  username: bocai
+  password: Bcabc@123
+  driver-class-name: com.mysql.jdbc.Driver
+  show-sql: true
+
+yy:
+  url: jdbc:mysql://testaccount.yiyitop.com:3306/bntweb_yiyinongye?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC&autoReconnect=true
+  username: bocai
+  password: Bcabc@123
+  driver-class-name: com.mysql.jdbc.Driver
+  show-sql: true
