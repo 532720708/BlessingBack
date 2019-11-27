@@ -1,17 +1,16 @@
-package axj.ap.entity;
+package axj.ap.bean;
 
 import axj.an.ALa;
-import axj.an.AMenu;
 import axj.db.an.AEntity;
 
 /**
  *
  */
 @AEntity()
-public class Pray {
+public class PrayBehavior {
 
-    @ALa("编号")
-    private Integer id;
+    @ALa("用户编号")
+    private Integer userId;
 
     @ALa("类型")
     private String kind;
@@ -25,12 +24,12 @@ public class Pray {
     @ALa("性别")
     private String gender;
 
-    public Integer getId() {
-        return id;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     public String getKind() {

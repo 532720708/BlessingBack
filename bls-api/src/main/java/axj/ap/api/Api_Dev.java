@@ -1,11 +1,15 @@
 package axj.ap.api;
 
 import axj.an.AEnv;
+import axj.ap.bean.Temple;
+import axj.ap.service.TempleList;
 import axj.serv.an.AMapping;
 import axj.serv.an.AServer;
 import axj.serv.an.BBody;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @AEnv
@@ -14,17 +18,8 @@ import java.util.Map;
 @BBody
 public class Api_Dev  {
 
-    public Map<String, Object> bless(String text) {
-        System.out.println("有了" + text);
-        Map<String, Object> rMap = new HashMap<>();
-        rMap.put("msg", "接收到了");
-        rMap.put("msg1", "接收到了1");
-        rMap.put("msg2", "接收到了2");
-
-        return rMap;
+    public List<Temple> getTempleList(String text){
+        return TempleList.getTempleList();
     }
 
-    public void none() {
-        System.out.println("我是none");
-    }
 }
