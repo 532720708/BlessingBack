@@ -1,13 +1,11 @@
-package axj.ap.Entity;
+package axj.ap.entity;
 
 import axj.an.ALa;
-import axj.ap.api.Temple;
-import axj.crud.an.AEdit;
 import axj.db.an.AEntity;
 import axj.db.an.AId;
 
 @AEntity
-public class TempleFunc implements Temple {
+public class TempleFunc  {
 
     @ALa("编号")
     @AId(auto = true)

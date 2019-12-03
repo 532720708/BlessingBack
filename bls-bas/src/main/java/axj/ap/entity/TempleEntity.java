@@ -1,4 +1,4 @@
-package axj.ap.Entity;
+package axj.ap.entity;
 
 import axj.an.ALa;
 import axj.an.AMenu;
@@ -14,7 +14,7 @@ import axj.db.an.AId;
  */
 @AMenu({@AMenu.Menu("寺庙信息管理"), @AMenu.Menu("寺庙列表")})
 @AEntity
-public class TempleEntity implements axj.ap.api.Temple {
+public class TempleEntity  {
 
     @ALa("编号")
     @AId(auto = true)

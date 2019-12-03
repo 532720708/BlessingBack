@@ -1,7 +1,7 @@
 package axj.ap.api;
 
 import axj.an.AEnv;
-import axj.ap.Entity.TempleEntity;
+import axj.ap.entity.TempleEntity;
 import axj.ap.service.PrayCommit;
 import axj.ap.service.TempleList;
 import axj.serv.an.AMapping;
@@ -17,10 +17,7 @@ import java.util.List;
 public class Api_Dev  {
 
     public List<TempleEntity> getTempleList(String location){
-        if(location != null)
-            return TempleList.getTempleList(location);
-        else
-            return TempleList.getTempleList();
+        return TempleList.getTempleList();
     }
 
     public void pray(String prayBehaviorString){
