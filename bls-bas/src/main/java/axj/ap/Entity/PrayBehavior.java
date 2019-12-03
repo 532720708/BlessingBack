@@ -1,4 +1,4 @@
-package axj.ap.bean;
+package axj.ap.Entity;
 
 import axj.an.ALa;
 import axj.db.an.AEntity;

@@ -1,10 +1,11 @@
 package axj.ap.service;
 
-import axj.ap.bean.PrayBehavior;
+import axj.ap.Entity.PrayBehavior;
 import axj.db.OSess;
 import com.alibaba.fastjson.JSONObject;
 
 public class PrayCommit {
+
     public static void commit(PrayBehavior action){
         OSess sess = OSess.source(null).openSess();
         try{

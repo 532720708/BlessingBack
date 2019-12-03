@@ -1,19 +1,18 @@
 package axj.ap.service;
 
-import axj.ap.bean.PrayBehavior;
-import axj.ap.bean.Temple;
+import axj.ap.Entity.TempleEntity;
 import axj.db.OSess;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class TempleList {
-    public static List<Temple> getTempleList() {
-        List<Temple> templeList = new ArrayList<>();
+    public static List<TempleEntity> getTempleList() {
+        List<TempleEntity> templeEntityList = new ArrayList<>();
         OSess sess = OSess.source(null).openSess();
         try{
-            templeList = sess.getAdl().list(
-                    Temple.class,sess.conn(),
+            templeEntityList = sess.getAdl().list(
+                    TempleEntity.class,sess.conn(),
                     "select * from temple",
                     null
             );
@@ -22,15 +21,15 @@ public class TempleList {
         }finally {
             sess.close();
         }
-        return templeList;
+        return templeEntityList;
     }
 
-    public static List<Temple> getTempleList(String location) {
-        List<Temple> templeList = new ArrayList<>();
+    public static List<TempleEntity> getTempleList(String location) {
+        List<TempleEntity> templeEntityList = new ArrayList<>();
         OSess sess = OSess.source(null).openSess();
         try{
-            templeList = sess.getAdl().list(
-                    Temple.class,sess.conn(),
+            templeEntityList = sess.getAdl().list(
+                    TempleEntity.class,sess.conn(),
                     "select * from temple where address like" + "'%" + location + "%'",
                     null
             );
@@ -39,6 +38,6 @@ public class TempleList {
         }finally {
             sess.close();
         }
-        return templeList;
+        return templeEntityList;
     }
 }

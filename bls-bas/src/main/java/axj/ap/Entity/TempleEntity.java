@@ -1,11 +1,10 @@
-package axj.ap.bean;
+package axj.ap.Entity;
 
 import axj.an.ALa;
 import axj.an.AMenu;
 import axj.crud.an.AEdit;
 import axj.db.an.AEntity;
 import axj.db.an.AId;
-import axj.db.bas.JBean;
 
 /**
  * @Classname Temple
@@ -15,7 +14,7 @@ import axj.db.bas.JBean;
  */
 @AMenu({@AMenu.Menu("寺庙信息管理"), @AMenu.Menu("寺庙列表")})
 @AEntity
-public class Temple  {
+public class TempleEntity implements axj.ap.api.Temple {
 
     @ALa("编号")
     @AId(auto = true)
@@ -48,6 +47,17 @@ public class Temple  {
 
     @ALa("票价")
     private Float price;
+
+    @ALa("功能")
+    private String func;
+
+    public String getFunc() {
+        return func;
+    }
+
+    public void setFunc(String func) {
+        this.func = func;
+    }
 
     public Integer getId() {
         return id;

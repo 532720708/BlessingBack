@@ -9,6 +9,12 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Maven: com.absir:axj-core:1.0" level="project" />
+    <orderEntry type="library" name="Maven: com.absir:axj-new:1.0" level="project" />
+    <orderEntry type="library" name="Maven: com.absir:axj-client:1.0" level="project" />
+    <orderEntry type="library" name="Maven: com.absir:axj-serv:1.0" level="project" />
+    <orderEntry type="library" name="Maven: com.absir:axj-open-weixin:1.0" level="project" />
+    <orderEntry type="library" name="Maven: com.absir:axj-open-alipay:1.0" level="project" />
     <orderEntry type="module" module-name="bls-bas" />
     <orderEntry type="module" module-name="axj-core" />
     <orderEntry type="module" module-name="axj-new" />

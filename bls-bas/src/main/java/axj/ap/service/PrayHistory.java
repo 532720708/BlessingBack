@@ -1,6 +1,6 @@
 package axj.ap.service;
 
-import axj.ap.bean.PrayBehavior;
+import axj.ap.Entity.PrayBehavior;
 import axj.db.OSess;
 
 import java.util.ArrayList;
