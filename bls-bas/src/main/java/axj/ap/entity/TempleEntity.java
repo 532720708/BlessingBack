@@ -30,7 +30,15 @@ public class TempleEntity  {
     @AColumn(len = 409600)
     private String desc;
 
-    @ALa("地址")
+    @ALa("省")
+    @AEdit(group = AEdit.List)
+    private int province;
+
+    @ALa("市")
+    @AEdit(group = AEdit.List)
+    private int city;
+
+    @ALa("详细地址")
     @AEdit(group = AEdit.List)
     private String address;
 

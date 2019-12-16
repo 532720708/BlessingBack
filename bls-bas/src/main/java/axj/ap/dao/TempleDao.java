@@ -24,6 +24,40 @@ public class TempleDao {
         return templeEntityList;
     }
 
+    public static List<TempleEntity> getTopTempleList(int num) {
+        List<TempleEntity> templeEntityList = new ArrayList<>();
+        OSess sess = OSess.source(null).openSess();
+        try{
+            templeEntityList = sess.getAdl().list(
+                    TempleEntity.class,sess.conn(),
+                    "select * from TempleEntity order by hot desc limit "+num,
+                    null
+            );
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            sess.close();
+        }
+        return templeEntityList;
+    }
+
+    public static List<TempleEntity> getTempleListByP(int pid) {
+        List<TempleEntity> templeEntityList = new ArrayList<>();
+        OSess sess = OSess.source(null).openSess();
+        try{
+            templeEntityList = sess.getAdl().list(
+                    TempleEntity.class,sess.conn(),
+                    "select * from TempleEntity where province = " + pid +"order by hot desc",
+                    null
+            );
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            sess.close();
+        }
+        return templeEntityList;
+    }
+
     public static List<TempleEntity> getTempleListByLoc(String location) {
         List<TempleEntity> templeEntityList = new ArrayList<>();
         OSess sess = OSess.source(null).openSess();

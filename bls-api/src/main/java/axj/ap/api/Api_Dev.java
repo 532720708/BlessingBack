@@ -16,14 +16,22 @@ import java.util.List;
 @BBody
 public class Api_Dev  {
 
+    /*获得全部寺庙列表*/
     public List<TempleEntity> getAllTempleList(){
         return TempleList.getTempleList();
     }
 
-    public List<TempleEntity> getTempleList(String location){
-        return TempleList.getTempleList();
+    /*获得热门寺庙列表*/
+    public List<TempleEntity> getTopTempleList(int num){
+        return TempleList.getTopTempleList(num);
     }
 
+    /*根据省份获得寺庙列表*/
+    public List<TempleEntity> getTempleListByP(int pid){
+        return TempleList.getTempleListByP(pid);
+    }
+
+    /*根据寺庙id获得寺庙列表*/
     public List<TempleEntity> getTempleListById(Integer id){
         return TempleList.getTempleListById(id);
     }

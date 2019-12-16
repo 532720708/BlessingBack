@@ -10,6 +10,14 @@ public class TempleList {
         return TempleDao.getTempleList();
     }
 
+    public static List<TempleEntity> getTopTempleList(int num) {
+        return TempleDao.getTopTempleList(num);
+    }
+
+    public static List<TempleEntity> getTempleListByP(int pid) {
+        return TempleDao.getTempleListByP(pid);
+    }
+
     public static List<TempleEntity> getTempleListByLoc(String location) {
         return TempleDao.getTempleListByLoc(location);
     }
