@@ -13,7 +13,7 @@ public class TempleDao {
         try{
             templeEntityList = sess.getAdl().list(
                     TempleEntity.class,sess.conn(),
-                    "select * from temple",
+                    "select * from TempleEntity",
                     null
             );
         }catch (Exception e){
@@ -30,7 +30,7 @@ public class TempleDao {
         try{
             templeEntityList = sess.getAdl().list(
                     TempleEntity.class,sess.conn(),
-                    "select * from temple where address like" + "'%" + location + "%'",
+                    "select * from TempleEntity where address like" + "'%" + location + "%'",
                     null
             );
         }catch (Exception e){
@@ -41,13 +41,13 @@ public class TempleDao {
         return templeEntityList;
     }
 
-    public static List<TempleEntity> getTempleListById(String id) {
+    public static List<TempleEntity> getTempleListById(Integer id) {
         List<TempleEntity> templeEntityList = new ArrayList<>();
         OSess sess = OSess.source(null).openSess();
         try{
             templeEntityList = sess.getAdl().list(
                     TempleEntity.class,sess.conn(),
-                    "select * from temple where id = " + id,
+                    "select * from TempleEntity where id = " + id,
                     null
             );
         }catch (Exception e){

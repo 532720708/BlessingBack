@@ -16,8 +16,16 @@ import java.util.List;
 @BBody
 public class Api_Dev  {
 
+    public List<TempleEntity> getAllTempleList(){
+        return TempleList.getTempleList();
+    }
+
     public List<TempleEntity> getTempleList(String location){
         return TempleList.getTempleList();
+    }
+
+    public List<TempleEntity> getTempleListById(Integer id){
+        return TempleList.getTempleListById(id);
     }
 
     public void pray(String prayBehaviorString){

@@ -3,6 +3,7 @@ package axj.ap.entity;
 import axj.an.ALa;
 import axj.an.AMenu;
 import axj.crud.an.AEdit;
+import axj.db.an.AColumn;
 import axj.db.an.AEntity;
 import axj.db.an.AId;
 
@@ -17,7 +18,6 @@ import axj.db.an.AId;
 public class TempleEntity  {
 
     @ALa("编号")
-    @AId(auto = true)
     @AEdit(meta = "width:100")
     private Integer id;
 
@@ -27,6 +27,7 @@ public class TempleEntity  {
 
     @ALa("介绍")
     @AEdit(group = AEdit.List)
+    @AColumn(len = 409600)
     private String desc;
 
     @ALa("地址")

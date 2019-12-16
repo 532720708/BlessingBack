@@ -14,7 +14,7 @@ public class TempleList {
         return TempleDao.getTempleListByLoc(location);
     }
 
-    public static List<TempleEntity> getTempleListById(String id) {
+    public static List<TempleEntity> getTempleListById(Integer id) {
         return TempleDao.getTempleListById(id);
     }
 }
