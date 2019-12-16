@@ -60,6 +60,9 @@ public class TEntity {
     @ALa("功能")
     private String func;
 
+    @ALa("联系电话")
+    private String tel;
+
     public Integer getId() {
         return id;
     }
@@ -138,5 +141,13 @@ public class TEntity {
 
     public void setFunc(String func) {
         this.func = func;
+    }
+
+    public String getTel() {
+        return tel;
+    }
+
+    public void setTel(String tel) {
+        this.tel = tel;
     }
 }
