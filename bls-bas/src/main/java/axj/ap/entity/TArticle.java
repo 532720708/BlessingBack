@@ -1,11 +1,13 @@
 package axj.ap.entity;
 
 import axj.an.ALa;
+import axj.an.AMenu;
 import axj.db.an.AEntity;
 import axj.db.an.AId;
 
+@AMenu({@AMenu.Menu("文章信息管理"), @AMenu.Menu("文章列表")})
 @AEntity
-public class TempleArticle  {
+public class TArticle {
 
     @ALa("编号")
     @AId(auto = true)
@@ -16,6 +18,7 @@ public class TempleArticle  {
 
     @ALa("文章地址")
     private String articleURL;
+
 
     public Integer getId() {
         return id;

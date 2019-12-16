@@ -1,28 +1,24 @@
 package axj.ap.service;
 
-import axj.ap.entity.TempleEntity;
+import axj.ap.entity.TEntity;
 import axj.ap.dao.TempleDao;
 
 import java.util.List;
 
 public class TempleList {
-    public static List<TempleEntity> getTempleList() {
-        return TempleDao.getTempleList();
+    public static List<TEntity> getAllTempleList() {
+        return TempleDao.getAllTempleList();
     }
 
-    public static List<TempleEntity> getTopTempleList(int num) {
+    public static List<TEntity> getTopTempleList(String num) {
         return TempleDao.getTopTempleList(num);
     }
 
-    public static List<TempleEntity> getTempleListByP(int pid) {
+    public static List<TEntity> getTempleListByP(String pid) {
         return TempleDao.getTempleListByP(pid);
     }
 
-    public static List<TempleEntity> getTempleListByLoc(String location) {
-        return TempleDao.getTempleListByLoc(location);
-    }
-
-    public static List<TempleEntity> getTempleListById(Integer id) {
+    public static List<TEntity> getTempleListById(String id) {
         return TempleDao.getTempleListById(id);
     }
 }

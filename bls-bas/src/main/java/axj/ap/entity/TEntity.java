@@ -15,9 +15,10 @@ import axj.db.an.AId;
  */
 @AMenu({@AMenu.Menu("寺庙信息管理"), @AMenu.Menu("寺庙列表")})
 @AEntity
-public class TempleEntity  {
+public class TEntity {
 
     @ALa("编号")
+    @AId(auto = true)
     @AEdit(meta = "width:100")
     private Integer id;
 
@@ -42,12 +43,6 @@ public class TempleEntity  {
     @AEdit(group = AEdit.List)
     private String address;
 
-    @ALa("经度")
-    private Float lng;
-
-    @ALa("纬度")
-    private Float lat;
-
     @ALa("主图")
     private String mImg;
 
@@ -59,14 +54,6 @@ public class TempleEntity  {
 
     @ALa("功能")
     private String func;
-
-    public String getFunc() {
-        return func;
-    }
-
-    public void setFunc(String func) {
-        this.func = func;
-    }
 
     public Integer getId() {
         return id;
@@ -92,28 +79,28 @@ public class TempleEntity  {
         this.desc = desc;
     }
 
+    public int getProvince() {
+        return province;
+    }
+
+    public void setProvince(int province) {
+        this.province = province;
+    }
+
+    public int getCity() {
+        return city;
+    }
+
+    public void setCity(int city) {
+        this.city = city;
+    }
+
     public String getAddress() {
         return address;
     }
 
     public void setAddress(String address) {
         this.address = address;
-    }
-
-    public Float getLng() {
-        return lng;
-    }
-
-    public void setLng(Float lng) {
-        this.lng = lng;
-    }
-
-    public Float getLat() {
-        return lat;
-    }
-
-    public void setLat(Float lat) {
-        this.lat = lat;
     }
 
     public String getmImg() {
@@ -138,5 +125,13 @@ public class TempleEntity  {
 
     public void setPrice(Float price) {
         this.price = price;
+    }
+
+    public String getFunc() {
+        return func;
+    }
+
+    public void setFunc(String func) {
+        this.func = func;
     }
 }

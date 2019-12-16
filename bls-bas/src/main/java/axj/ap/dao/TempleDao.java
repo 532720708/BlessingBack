@@ -1,18 +1,18 @@
 package axj.ap.dao;
 
-import axj.ap.entity.TempleEntity;
+import axj.ap.entity.TEntity;
 import axj.db.OSess;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class TempleDao {
-    public static List<TempleEntity> getTempleList() {
-        List<TempleEntity> templeEntityList = new ArrayList<>();
+    public static List<TEntity> getAllTempleList() {
+        List<TEntity> templeEntityList = new ArrayList<>();
         OSess sess = OSess.source(null).openSess();
         try{
             templeEntityList = sess.getAdl().list(
-                    TempleEntity.class,sess.conn(),
+                    TEntity.class,sess.conn(),
                     "select * from TempleEntity",
                     null
             );
@@ -24,12 +24,12 @@ public class TempleDao {
         return templeEntityList;
     }
 
-    public static List<TempleEntity> getTopTempleList(int num) {
-        List<TempleEntity> templeEntityList = new ArrayList<>();
+    public static List<TEntity> getTopTempleList(String num) {
+        List<TEntity> templeEntityList = new ArrayList<>();
         OSess sess = OSess.source(null).openSess();
         try{
             templeEntityList = sess.getAdl().list(
-                    TempleEntity.class,sess.conn(),
+                    TEntity.class,sess.conn(),
                     "select * from TempleEntity order by hot desc limit "+num,
                     null
             );
@@ -41,12 +41,12 @@ public class TempleDao {
         return templeEntityList;
     }
 
-    public static List<TempleEntity> getTempleListByP(int pid) {
-        List<TempleEntity> templeEntityList = new ArrayList<>();
+    public static List<TEntity> getTempleListByP(String pid) {
+        List<TEntity> templeEntityList = new ArrayList<>();
         OSess sess = OSess.source(null).openSess();
         try{
             templeEntityList = sess.getAdl().list(
-                    TempleEntity.class,sess.conn(),
+                    TEntity.class,sess.conn(),
                     "select * from TempleEntity where province = " + pid +"order by hot desc",
                     null
             );
@@ -58,29 +58,12 @@ public class TempleDao {
         return templeEntityList;
     }
 
-    public static List<TempleEntity> getTempleListByLoc(String location) {
-        List<TempleEntity> templeEntityList = new ArrayList<>();
+    public static List<TEntity> getTempleListById(String id) {
+        List<TEntity> templeEntityList = new ArrayList<>();
         OSess sess = OSess.source(null).openSess();
         try{
             templeEntityList = sess.getAdl().list(
-                    TempleEntity.class,sess.conn(),
-                    "select * from TempleEntity where address like" + "'%" + location + "%'",
-                    null
-            );
-        }catch (Exception e){
-            e.printStackTrace();
-        }finally {
-            sess.close();
-        }
-        return templeEntityList;
-    }
-
-    public static List<TempleEntity> getTempleListById(Integer id) {
-        List<TempleEntity> templeEntityList = new ArrayList<>();
-        OSess sess = OSess.source(null).openSess();
-        try{
-            templeEntityList = sess.getAdl().list(
-                    TempleEntity.class,sess.conn(),
+                    TEntity.class,sess.conn(),
                     "select * from TempleEntity where id = " + id,
                     null
             );
