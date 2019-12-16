@@ -6,19 +6,19 @@ import com.alibaba.fastjson.JSONObject;
 
 public class PrayCommit {
 
-    public static void commit(PrayBehavior action){
+    public static void commit(PrayBehavior action) {
         OSess sess = OSess.source(null).openSess();
-        try{
-            OSess.Sor<PrayBehavior> sor = sess.insert(null,action);
+        try {
+            OSess.Sor<PrayBehavior> sor = sess.insert(null, action);
             sor.update();
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             sess.close();
         }
     }
 
-    public static void commit(String action){
+    public static void commit(String action) {
         PrayBehavior prayBehavior = new PrayBehavior();
 
         JSONObject jsonObject = JSONObject.parseObject(action);
@@ -29,12 +29,12 @@ public class PrayCommit {
         prayBehavior.setGender(jsonObject.getString("gender"));
 
         OSess sess = OSess.source(null).openSess();
-        try{
-            OSess.Sor<PrayBehavior> sor = sess.insert(null,prayBehavior);
+        try {
+            OSess.Sor<PrayBehavior> sor = sess.insert(null, prayBehavior);
             sor.update();
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             sess.close();
         }
     }

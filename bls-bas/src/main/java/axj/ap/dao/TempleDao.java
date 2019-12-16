@@ -10,15 +10,15 @@ public class TempleDao {
     public static List<TEntity> getAllTempleList() {
         List<TEntity> templeEntityList = new ArrayList<>();
         OSess sess = OSess.source(null).openSess();
-        try{
+        try {
             templeEntityList = sess.getAdl().list(
-                    TEntity.class,sess.conn(),
-                    "select * from TempleEntity",
+                    TEntity.class, sess.conn(),
+                    "select * from TEntity",
                     null
             );
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             sess.close();
         }
         return templeEntityList;
@@ -27,15 +27,15 @@ public class TempleDao {
     public static List<TEntity> getTopTempleList(String num) {
         List<TEntity> templeEntityList = new ArrayList<>();
         OSess sess = OSess.source(null).openSess();
-        try{
+        try {
             templeEntityList = sess.getAdl().list(
-                    TEntity.class,sess.conn(),
-                    "select * from TempleEntity order by hot desc limit "+num,
+                    TEntity.class, sess.conn(),
+                    "select * from TEntity order by hot desc limit " + num,
                     null
             );
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             sess.close();
         }
         return templeEntityList;
@@ -44,15 +44,15 @@ public class TempleDao {
     public static List<TEntity> getTempleListByP(String pid) {
         List<TEntity> templeEntityList = new ArrayList<>();
         OSess sess = OSess.source(null).openSess();
-        try{
+        try {
             templeEntityList = sess.getAdl().list(
-                    TEntity.class,sess.conn(),
-                    "select * from TempleEntity where province = " + pid +"order by hot desc",
+                    TEntity.class, sess.conn(),
+                    "select * from TEntity where province = " + pid + "order by hot desc",
                     null
             );
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             sess.close();
         }
         return templeEntityList;
@@ -61,15 +61,15 @@ public class TempleDao {
     public static List<TEntity> getTempleListById(String id) {
         List<TEntity> templeEntityList = new ArrayList<>();
         OSess sess = OSess.source(null).openSess();
-        try{
+        try {
             templeEntityList = sess.getAdl().list(
-                    TEntity.class,sess.conn(),
-                    "select * from TempleEntity where id = " + id,
+                    TEntity.class, sess.conn(),
+                    "select * from TEntity where id = " + id,
                     null
             );
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             sess.close();
         }
         return templeEntityList;

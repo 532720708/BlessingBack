@@ -1,7 +1,6 @@
 package axj.ap.dao;
 
 import axj.ap.entity.TCity;
-import axj.ap.entity.TEntity;
 import axj.db.OSess;
 
 import java.util.ArrayList;
@@ -11,15 +10,15 @@ public class CityDao {
     public static List<TCity> getCity() {
         List<TCity> cityList = new ArrayList<>();
         OSess sess = OSess.source(null).openSess();
-        try{
+        try {
             cityList = sess.getAdl().list(
-                    TCity.class,sess.conn(),
+                    TCity.class, sess.conn(),
                     "select * from TCity where pid = 1",
                     null
             );
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             sess.close();
         }
         return cityList;

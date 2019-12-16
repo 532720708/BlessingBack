@@ -33,11 +33,16 @@ public class TEntity {
 
     @ALa("省")
     @AEdit(group = AEdit.List)
-    private int province;
+//    @ALa("省")
+//    @AEdit(group = AEdit.List)
+//    @JSONField(serialize = false)
+//    @AClass(Prov.class)
+    private String province;
+
 
     @ALa("市")
     @AEdit(group = AEdit.List)
-    private int city;
+    private String city;
 
     @ALa("详细地址")
     @AEdit(group = AEdit.List)
@@ -79,19 +84,19 @@ public class TEntity {
         this.desc = desc;
     }
 
-    public int getProvince() {
+    public String getProvince() {
         return province;
     }
 
-    public void setProvince(int province) {
+    public void setProvince(String province) {
         this.province = province;
     }
 
-    public int getCity() {
+    public String getCity() {
         return city;
     }
 
-    public void setCity(int city) {
+    public void setCity(String city) {
         this.city = city;
     }
 

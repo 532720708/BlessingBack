@@ -13,13 +13,13 @@ public class TCity {
     private Integer id;
 
     @ALa("省份编号")
-    private int pid;
+    private Integer pid;
 
     @ALa("城市名称")
     private String cityname;
 
     @ALa("类型")
-    private int type;
+    private Integer type;
 
     public Integer getId() {
         return id;
@@ -29,11 +29,11 @@ public class TCity {
         this.id = id;
     }
 
-    public int getPid() {
+    public Integer getPid() {
         return pid;
     }
 
-    public void setPid(int pid) {
+    public void setPid(Integer pid) {
         this.pid = pid;
     }
 
@@ -45,11 +45,11 @@ public class TCity {
         this.cityname = cityname;
     }
 
-    public int getType() {
+    public Integer getType() {
         return type;
     }
 
-    public void setType(int type) {
+    public void setType(Integer type) {
         this.type = type;
     }
 }

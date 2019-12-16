@@ -1,6 +1,5 @@
 package axj.ap.dao;
 
-import axj.ap.entity.TCity;
 import axj.ap.entity.TScripture;
 import axj.db.OSess;
 
@@ -12,15 +11,15 @@ public class ScriptureDao {
     public static List<TScripture> getAllScripture() {
         List<TScripture> scriptureList = new ArrayList<>();
         OSess sess = OSess.source(null).openSess();
-        try{
+        try {
             scriptureList = sess.getAdl().list(
-                    TScripture.class,sess.conn(),
+                    TScripture.class, sess.conn(),
                     "select * from TScripture",
                     null
             );
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             sess.close();
         }
         return scriptureList;
@@ -29,15 +28,15 @@ public class ScriptureDao {
     public static List<TScripture> getScriptureById(String id) {
         List<TScripture> scriptureList = new ArrayList<>();
         OSess sess = OSess.source(null).openSess();
-        try{
+        try {
             scriptureList = sess.getAdl().list(
-                    TScripture.class,sess.conn(),
-                    "select * from TScripture where id = " +id,
+                    TScripture.class, sess.conn(),
+                    "select * from TScripture where id = " + id,
                     null
             );
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             sess.close();
         }
         return scriptureList;

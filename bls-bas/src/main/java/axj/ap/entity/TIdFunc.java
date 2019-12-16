@@ -21,25 +21,25 @@ public class TIdFunc {
 
     @ALa("寺庙id")
     @AEdit(group = AEdit.List)
-    private int tempId;
+    private Integer tempId;
 
     @ALa("功能id")
     @AEdit(group = AEdit.List)
-    private int funcId;
+    private Integer funcId;
 
-    public int getTempId() {
+    public Integer getTempId() {
         return tempId;
     }
 
-    public void setTempId(int tempId) {
+    public void setTempId(Integer tempId) {
         this.tempId = tempId;
     }
 
-    public int getFuncId() {
+    public Integer getFuncId() {
         return funcId;
     }
 
-    public void setFuncId(int funcId) {
+    public void setFuncId(Integer funcId) {
         this.funcId = funcId;
     }
 }

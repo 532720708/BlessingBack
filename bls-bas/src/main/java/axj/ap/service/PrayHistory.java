@@ -10,15 +10,15 @@ public class PrayHistory {
     public static List<PrayBehavior> getHistory(int userId) {
         List<PrayBehavior> historyList = new ArrayList<>();
         OSess sess = OSess.source(null).openSess();
-        try{
+        try {
             historyList = sess.getAdl().list(
-                    PrayBehavior.class,sess.conn(),
+                    PrayBehavior.class, sess.conn(),
                     "select * from praybehavior where userId = " + userId,
                     null
             );
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             sess.close();
         }
         return historyList;
