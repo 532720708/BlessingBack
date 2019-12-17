@@ -1,5 +1,6 @@
 package axj.ap.dao;
 
+import axj.ap.entity.TCity;
 import axj.ap.entity.TEntity;
 import axj.db.OSess;
 
@@ -43,11 +44,17 @@ public class TempleDao {
 
     public static List<TEntity> getTempleListByP(String pid) {
         List<TEntity> templeEntityList = new ArrayList<>();
+        List<TCity> tCityList = new ArrayList<>();
         OSess sess = OSess.source(null).openSess();
         try {
+            tCityList = sess.getAdl().list(
+                    TCity.class, sess.conn(),
+                    "SELECT cityname FROM `TCity` where id = " + pid,
+                    null
+            );
             templeEntityList = sess.getAdl().list(
                     TEntity.class, sess.conn(),
-                    "select * from TEntity where province = " + pid + "order by hot desc",
+                    "SELECT * FROM TEntity where province like '" + tCityList.get(0).getCityname() + "%'",
                     null
             );
         } catch (Exception e) {

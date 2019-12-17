@@ -33,7 +33,7 @@ public class Api_Dev {
         Spider.spiderDemo(sheng, shi, qu);
     }
 
-    public void traverse() {
+    public void traverse() throws InterruptedException {
         Spider.traverse();
     }
 
