@@ -19,7 +19,7 @@ public class TArticle {
 
     @ALa("文章标题")
     @AColumn(len = 409600)
-    private Integer title;
+    private String title;
 
     @ALa("浏览量")
     private Integer hot;
@@ -32,11 +32,11 @@ public class TArticle {
     private String sourceType;
 
 
-    public Integer getTitle() {
+    public String getTitle() {
         return title;
     }
 
-    public void setTitle(Integer title) {
+    public void setTitle(String title) {
         this.title = title;
     }
 
