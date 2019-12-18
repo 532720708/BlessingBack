@@ -2,6 +2,7 @@ package axj.ap.entity;
 
 import axj.an.ALa;
 import axj.an.AMenu;
+import axj.db.an.AColumn;
 import axj.db.an.AEntity;
 import axj.db.an.AId;
 
@@ -16,9 +17,44 @@ public class TArticle {
     @ALa("寺院编号")
     private Integer templeId;
 
-    @ALa("文章地址")
-    private String articleURL;
+    @ALa("文章标题")
+    @AColumn(len = 409600)
+    private Integer title;
 
+    @ALa("浏览量")
+    private Integer hot;
+
+    @ALa("文章内容")
+    @AColumn(len = 409600)
+    private String content;
+
+    @ALa("来源类型")
+    private String sourceType;
+
+
+    public Integer getTitle() {
+        return title;
+    }
+
+    public void setTitle(Integer title) {
+        this.title = title;
+    }
+
+    public Integer getHot() {
+        return hot;
+    }
+
+    public void setHot(Integer hot) {
+        this.hot = hot;
+    }
+
+    public String getSourceType() {
+        return sourceType;
+    }
+
+    public void setSourceType(String sourceType) {
+        this.sourceType = sourceType;
+    }
 
     public Integer getId() {
         return id;
@@ -36,11 +72,11 @@ public class TArticle {
         this.templeId = templeId;
     }
 
-    public String getArticleURL() {
-        return articleURL;
+    public String getContent() {
+        return content;
     }
 
-    public void setArticleURL(String articleURL) {
-        this.articleURL = articleURL;
+    public void setContent(String content) {
+        this.content = content;
     }
 }
