@@ -3,12 +3,12 @@ package axj.ap.dao;
 import axj.ap.entity.media.TArticle;
 import axj.db.OSess;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class ArticleDao {
-    public static List<TArticle> getAllArticle() {
-        List<TArticle> articleList = new ArrayList<>();
+    public static List<TArticle> getArticle() {
+        List<TArticle> articleList = new CopyOnWriteArrayList<>();
         OSess sess = OSess.source(null).openSess();
         try {
             articleList = sess.getAdl().list(
@@ -24,8 +24,8 @@ public class ArticleDao {
         return articleList;
     }
 
-    public static List<TArticle> getArticleById(String id) {
-        List<TArticle> articleList = new ArrayList<>();
+    public static List<TArticle> getArticle(String id) {
+        List<TArticle> articleList = new CopyOnWriteArrayList<>();
         OSess sess = OSess.source(null).openSess();
         try {
             articleList = sess.getAdl().list(

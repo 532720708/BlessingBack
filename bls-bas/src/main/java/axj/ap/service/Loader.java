@@ -14,20 +14,20 @@ public class Loader {
         return CityDao.getCity();
     }
 
-    public static List<TArticle> getAllArticle() {
-        return ArticleDao.getAllArticle();
+    public static List<TArticle> getArticle() {
+        return ArticleDao.getArticle();
     }
 
-    public static List<TArticle> getArticleById(String id) {
-        return ArticleDao.getArticleById(id);
+    public static List<TArticle> getArticle(String id) {
+        return ArticleDao.getArticle(id);
     }
 
-    public static List<TScripture> getAllScripture() {
-        return ScriptureDao.getAllScripture();
+    public static List<TScripture> getScripture() {
+        return ScriptureDao.getScripture();
     }
 
-    public static List<TScripture> getScriptureById(String id) {
-        return ScriptureDao.getScriptureById(id);
+    public static List<TScripture> getScripture(String id) {
+        return ScriptureDao.getScripture(id);
     }
 
 

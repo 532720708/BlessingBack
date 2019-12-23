@@ -6,10 +6,11 @@ import axj.db.OSess;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class TempleDao {
     public static List<TEntity> getAllTempleList() {
-        List<TEntity> templeEntityList = new ArrayList<>();
+        List<TEntity> templeEntityList = new CopyOnWriteArrayList<>();
         OSess sess = OSess.source(null).openSess();
         try {
             templeEntityList = sess.getAdl().list(
@@ -26,7 +27,7 @@ public class TempleDao {
     }
 
     public static List<TEntity> getTopTempleList(String num) {
-        List<TEntity> templeEntityList = new ArrayList<>();
+        List<TEntity> templeEntityList = new CopyOnWriteArrayList<>();
         OSess sess = OSess.source(null).openSess();
         try {
             templeEntityList = sess.getAdl().list(
@@ -43,7 +44,7 @@ public class TempleDao {
     }
 
     public static List<TEntity> getTempleListByP(String pid) {
-        List<TEntity> templeEntityList = new ArrayList<>();
+        List<TEntity> templeEntityList = new CopyOnWriteArrayList<>();
         List<TCity> tCityList = new ArrayList<>();
         OSess sess = OSess.source(null).openSess();
         try {
@@ -66,7 +67,7 @@ public class TempleDao {
     }
 
     public static List<TEntity> getTempleListById(String id) {
-        List<TEntity> templeEntityList = new ArrayList<>();
+        List<TEntity> templeEntityList = new CopyOnWriteArrayList<>();
         OSess sess = OSess.source(null).openSess();
         try {
             templeEntityList = sess.getAdl().list(
