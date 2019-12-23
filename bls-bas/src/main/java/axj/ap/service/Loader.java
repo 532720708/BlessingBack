@@ -3,9 +3,9 @@ package axj.ap.service;
 import axj.ap.dao.ArticleDao;
 import axj.ap.dao.CityDao;
 import axj.ap.dao.ScriptureDao;
-import axj.ap.entity.TArticle;
 import axj.ap.entity.TCity;
-import axj.ap.entity.TScripture;
+import axj.ap.entity.media.TArticle;
+import axj.ap.entity.media.TScripture;
 
 import java.util.List;
 

@@ -2,10 +2,10 @@ package axj.ap.api;
 
 import axj.an.AEnv;
 import axj.ap.dao.Spider;
-import axj.ap.entity.TArticle;
 import axj.ap.entity.TCity;
-import axj.ap.entity.TEntity;
-import axj.ap.entity.TScripture;
+import axj.ap.entity.media.TArticle;
+import axj.ap.entity.media.TScripture;
+import axj.ap.entity.temple.TEntity;
 import axj.ap.service.Loader;
 import axj.ap.service.PrayCommit;
 import axj.ap.service.TempleList;

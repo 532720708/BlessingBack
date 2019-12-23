@@ -1,4 +1,4 @@
-package axj.ap.entity;
+package axj.ap.entity.temple;
 
 import axj.an.ALa;
 import axj.an.AMenu;
@@ -8,10 +8,7 @@ import axj.db.an.AEntity;
 import axj.db.an.AId;
 
 /**
- * @Classname Temple
- * @Description
- * @Date 2019/11/26 19:06
- * @Created by Yuan Huanghui
+ * 寺庙实体
  */
 @AMenu({@AMenu.Menu("寺庙信息管理"), @AMenu.Menu("寺庙列表")})
 @AEntity
@@ -33,12 +30,7 @@ public class TEntity {
 
     @ALa("省")
     @AEdit(group = AEdit.List)
-//    @ALa("省")
-//    @AEdit(group = AEdit.List)
-//    @JSONField(serialize = false)
-//    @AClass(Prov.class)
     private String province;
-
 
     @ALa("市")
     @AEdit(group = AEdit.List)
@@ -57,7 +49,8 @@ public class TEntity {
     @ALa("票价")
     private Float price;
 
-    @ALa("功能")
+    //JSON
+    @ALa("佛像功能")
     private String func;
 
     @ALa("联系电话")

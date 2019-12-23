@@ -1,6 +1,6 @@
 package axj.ap.service;
 
-import axj.ap.entity.PrayBehavior;
+import axj.ap.entity.pray.PrayBehavior;
 import axj.db.OSess;
 import com.alibaba.fastjson.JSONObject;
 

@@ -1,30 +1,33 @@
-package axj.ap.entity;
+package axj.ap.entity.pray;
 
 import axj.an.ALa;
+import axj.an.AMenu;
 import axj.db.an.AEntity;
 import axj.db.an.AId;
 
 /**
- *
+ * 祈福编号
  */
-@AEntity()
+@AMenu({@AMenu.Menu("祈福管理"), @AMenu.Menu("用户祈福记录")})
+@AEntity
 public class PrayBehavior {
 
-    @ALa("行为编号")
+    @ALa("祈福编号")
     @AId(auto = true)
     private Integer id;
 
     @ALa("用户编号")
     private Integer userId;
 
-    @ALa("寺庙名称")
-    private String name;
+    @ALa("寺庙Id")
+    private Integer templeId;
 
-    @ALa("祈愿类型")
-    private String kind;
+    @ALa("佛像选择")
+    private String buddhaType;
 
-    @ALa("内容")
-    private String content;
+    //用JSON
+    @ALa("供奉")
+    private String worship;
 
     @ALa("时间")
     private Integer prayTime;
@@ -48,28 +51,28 @@ public class PrayBehavior {
         this.userId = userId;
     }
 
-    public String getName() {
-        return name;
+    public Integer getTempleId() {
+        return templeId;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTempleId(Integer templeId) {
+        this.templeId = templeId;
     }
 
-    public String getKind() {
-        return kind;
+    public String getBuddhaType() {
+        return buddhaType;
     }
 
-    public void setKind(String kind) {
-        this.kind = kind;
+    public void setBuddhaType(String buddhaType) {
+        this.buddhaType = buddhaType;
     }
 
-    public String getContent() {
-        return content;
+    public String getWorship() {
+        return worship;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setWorship(String worship) {
+        this.worship = worship;
     }
 
     public Integer getPrayTime() {

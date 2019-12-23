@@ -1,4 +1,4 @@
-package axj.ap.entity;
+package axj.ap.entity.media;
 
 import axj.an.ALa;
 import axj.an.AMenu;
@@ -8,9 +8,9 @@ import axj.db.an.AEntity;
 import axj.db.an.AId;
 
 /**
- * 佛经Bean
+ * 佛经
  */
-@AMenu({@AMenu.Menu("佛经信息管理"), @AMenu.Menu("佛经列表")})
+@AMenu({@AMenu.Menu("多媒体信息管理"), @AMenu.Menu("佛经")})
 @AEntity
 public class TScripture {
 
@@ -22,7 +22,7 @@ public class TScripture {
     @ALa("佛经名称")
     private String name;
 
-    @ALa("介绍")
+    @ALa("原文")
     @AEdit(group = AEdit.List)
     @AColumn(len = 409600)
     private String original;

@@ -1,23 +1,26 @@
-package axj.ap.entity;
+package axj.ap.entity.temple;
+
 
 import axj.an.ALa;
+import axj.an.AMenu;
 import axj.crud.an.AEdit;
 import axj.db.an.AEntity;
 import axj.db.an.AId;
 
-/**
- * 祈愿功能表
- */
+@AMenu({@AMenu.Menu("寺庙信息管理"), @AMenu.Menu("佛像列表")})
 @AEntity
-public class TFunc {
-
+public class TBuddha {
     @ALa("编号")
     @AId(auto = true)
     @AEdit(meta = "width:100")
     private Integer id;
 
-    @ALa("祈愿功能名称")
+    @ALa("佛像名称")
     private String funcName;
+
+    //此处地址就是佛像对应的一套图片的地址
+    @ALa("佛像图片库")
+    private String url;
 
     public Integer getId() {
         return id;
@@ -33,5 +36,13 @@ public class TFunc {
 
     public void setFuncName(String funcName) {
         this.funcName = funcName;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 }

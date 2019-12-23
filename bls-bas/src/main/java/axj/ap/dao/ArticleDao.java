@@ -1,6 +1,6 @@
 package axj.ap.dao;
 
-import axj.ap.entity.TArticle;
+import axj.ap.entity.media.TArticle;
 import axj.db.OSess;
 
 import java.util.ArrayList;

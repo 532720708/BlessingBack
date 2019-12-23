@@ -1,7 +1,7 @@
 package axj.ap.dao;
 
 import axj.ap.entity.TCity;
-import axj.ap.entity.TEntity;
+import axj.ap.entity.temple.TEntity;
 import axj.db.OSess;
 
 import java.util.ArrayList;

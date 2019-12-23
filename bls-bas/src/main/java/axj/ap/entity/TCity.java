@@ -5,6 +5,9 @@ import axj.crud.an.AEdit;
 import axj.db.an.AEntity;
 import axj.db.an.AId;
 
+/**
+ * 全国省市数据，无需改动
+ */
 @AEntity
 public class TCity {
     @ALa("编号")

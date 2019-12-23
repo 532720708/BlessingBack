@@ -1,7 +1,7 @@
 package axj.ap.service;
 
 import axj.ap.dao.TempleDao;
-import axj.ap.entity.TEntity;
+import axj.ap.entity.temple.TEntity;
 
 import java.util.List;
 

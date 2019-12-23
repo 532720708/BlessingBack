@@ -1,4 +1,4 @@
-package axj.ap.entity;
+package axj.ap.entity.media;
 
 import axj.an.ALa;
 import axj.an.AMenu;
@@ -6,7 +6,10 @@ import axj.db.an.AColumn;
 import axj.db.an.AEntity;
 import axj.db.an.AId;
 
-@AMenu({@AMenu.Menu("文章信息管理"), @AMenu.Menu("文章列表")})
+/**
+ * 首页的文章
+ */
+@AMenu({@AMenu.Menu("多媒体信息管理"), @AMenu.Menu("首页文章")})
 @AEntity
 public class TArticle {
 
