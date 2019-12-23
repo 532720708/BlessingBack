@@ -2,6 +2,7 @@ package axj.ap.api;
 
 import axj.an.AEnv;
 import axj.ap.dao.Spider;
+import axj.ap.entity.TAd;
 import axj.ap.entity.TCity;
 import axj.ap.entity.media.TArticle;
 import axj.ap.entity.media.TScripture;
@@ -112,6 +113,19 @@ public class Api_Dev {
 
     public void pray(String prayBehaviorString) {
         PrayCommit.commit(prayBehaviorString);
+    }
+
+    /**
+     * 获得轮播广告
+     *
+     * @return
+     */
+    public List<TAd> getAd() {
+        return Loader.getAd();
+    }
+
+    public List<TAd> getAd(int num) {
+        return Loader.getAd(num);
     }
 
 }

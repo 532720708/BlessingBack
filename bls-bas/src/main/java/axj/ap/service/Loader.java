@@ -1,8 +1,10 @@
 package axj.ap.service;
 
+import axj.ap.dao.AdDao;
 import axj.ap.dao.ArticleDao;
 import axj.ap.dao.CityDao;
 import axj.ap.dao.ScriptureDao;
+import axj.ap.entity.TAd;
 import axj.ap.entity.TCity;
 import axj.ap.entity.media.TArticle;
 import axj.ap.entity.media.TScripture;
@@ -28,6 +30,14 @@ public class Loader {
 
     public static List<TScripture> getScripture(String id) {
         return ScriptureDao.getScripture(id);
+    }
+
+    public static List<TAd> getAd() {
+        return AdDao.getAdList();
+    }
+
+    public static List<TAd> getAd(int num) {
+        return AdDao.getAdList(num);
     }
 
 
