@@ -3,8 +3,11 @@ package axj.ap.entity;
 import axj.an.ALa;
 import axj.an.AMenu;
 import axj.crud.an.AEdit;
+import axj.crud.an.AUpload;
+import axj.crud.upload.AUploadImage;
 import axj.db.an.AEntity;
 import axj.db.an.AId;
+import axj.valid.an.Required;
 
 @AMenu({@AMenu.Menu("轮播")})
 @AEntity
@@ -14,15 +17,21 @@ public class TAd {
     @AEdit(meta = "width:100")
     private Integer id;
 
+    @Required
     @ALa("广告名称")
     private String name;
 
+    @Required
     @ALa("广告图片")
+    @AUploadImage
+    @AUpload
     private String image;
 
+    @Required
     @ALa("广告超链接")
     private String url;
 
+    @Required
     @ALa("插入时间")
     private Integer timestamp;
 

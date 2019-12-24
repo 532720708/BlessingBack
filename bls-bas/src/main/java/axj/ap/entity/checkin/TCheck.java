@@ -3,8 +3,11 @@ package axj.ap.entity.checkin;
 import axj.an.ALa;
 import axj.an.AMenu;
 import axj.crud.an.AEdit;
+import axj.crud.an.AUpload;
+import axj.crud.upload.AUploadImage;
 import axj.db.an.AEntity;
 import axj.db.an.AId;
+import axj.valid.an.Required;
 
 /**
  * 签到库
@@ -17,9 +20,13 @@ public class TCheck {
     @AEdit(meta = "width:100")
     private Integer id;
 
+    @Required
     @ALa("签到图片")
+    @AUploadImage
+    @AUpload
     private String image;
 
+    @Required
     @ALa("签到内容")
     private String content;
 

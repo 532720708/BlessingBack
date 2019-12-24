@@ -5,6 +5,7 @@ import axj.an.AMenu;
 import axj.crud.an.AEdit;
 import axj.db.an.AEntity;
 import axj.db.an.AId;
+import axj.valid.an.Required;
 
 /**
  * 用户签到数据库 1-1记录
@@ -18,12 +19,15 @@ public class TCheckin {
     @AEdit(meta = "width:100")
     private Integer id;
 
+    @Required
     @ALa("用户ID")
     private Integer userId;
 
+    @Required
     @ALa("签到时间")
     private Integer timestamp;
 
+    @Required
     @ALa("签号id")
     private Integer checkinId;
 

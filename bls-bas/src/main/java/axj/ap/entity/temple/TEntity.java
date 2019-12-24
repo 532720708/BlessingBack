@@ -3,6 +3,8 @@ package axj.ap.entity.temple;
 import axj.an.ALa;
 import axj.an.AMenu;
 import axj.crud.an.AEdit;
+import axj.crud.an.AUpload;
+import axj.crud.upload.AUploadImage;
 import axj.db.an.AColumn;
 import axj.db.an.AEntity;
 import axj.db.an.AId;
@@ -41,6 +43,8 @@ public class TEntity {
     private String address;
 
     @ALa("主图")
+    @AUploadImage
+    @AUpload
     private String mImg;
 
     @ALa("热度")

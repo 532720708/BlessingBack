@@ -6,6 +6,7 @@ import axj.an.AMenu;
 import axj.crud.an.AEdit;
 import axj.db.an.AEntity;
 import axj.db.an.AId;
+import axj.valid.an.Required;
 
 @AMenu({@AMenu.Menu("寺庙信息管理"), @AMenu.Menu("佛像列表")})
 @AEntity
@@ -15,6 +16,7 @@ public class TBuddha {
     @AEdit(meta = "width:100")
     private Integer id;
 
+    @Required
     @ALa("佛像名称")
     private String funcName;
 

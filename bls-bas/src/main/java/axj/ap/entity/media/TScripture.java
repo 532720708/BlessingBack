@@ -3,9 +3,11 @@ package axj.ap.entity.media;
 import axj.an.ALa;
 import axj.an.AMenu;
 import axj.crud.an.AEdit;
+import axj.crud.an.AHtml;
 import axj.db.an.AColumn;
 import axj.db.an.AEntity;
 import axj.db.an.AId;
+import axj.valid.an.Required;
 
 /**
  * 佛经
@@ -19,16 +21,18 @@ public class TScripture {
     @AEdit(meta = "width:100")
     private Integer id;
 
+    @Required
     @ALa("佛经名称")
     private String name;
 
+    @Required
     @ALa("原文")
-    @AEdit(group = AEdit.List)
+    @AHtml
     @AColumn(len = 409600)
     private String original;
 
     @ALa("译文")
-    @AEdit(group = AEdit.List)
+    @AHtml
     @AColumn(len = 409600)
     private String translation;
 

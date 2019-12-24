@@ -5,6 +5,7 @@ import axj.an.AMenu;
 import axj.crud.an.AEdit;
 import axj.db.an.AEntity;
 import axj.db.an.AId;
+import axj.valid.an.Required;
 
 /**
  * 祈愿功能表
@@ -18,6 +19,7 @@ public class TFunc {
     @AEdit(meta = "width:100")
     private Integer id;
 
+    @Required
     @ALa("供奉名称")
     private String funcName;
 

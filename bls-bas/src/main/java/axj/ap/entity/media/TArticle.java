@@ -2,9 +2,11 @@ package axj.ap.entity.media;
 
 import axj.an.ALa;
 import axj.an.AMenu;
+import axj.crud.an.AHtml;
 import axj.db.an.AColumn;
 import axj.db.an.AEntity;
 import axj.db.an.AId;
+import axj.valid.an.Required;
 
 /**
  * 首页的文章
@@ -20,6 +22,7 @@ public class TArticle {
     @ALa("寺院编号")
     private Integer templeId;
 
+    @Required
     @ALa("文章标题")
     @AColumn(len = 409600)
     private String title;
@@ -27,10 +30,14 @@ public class TArticle {
     @ALa("浏览量")
     private Integer hot;
 
+
     @ALa("文章内容")
+    @Required
+    @AHtml
     @AColumn(len = 409600)
     private String content;
 
+    @Required
     @ALa("来源类型")
     private String sourceType;
 

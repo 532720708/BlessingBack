@@ -3,12 +3,17 @@ package axj.ap.entity.media;
 import axj.an.ALa;
 import axj.an.AMenu;
 import axj.crud.an.AEdit;
+import axj.crud.an.AUpload;
+import axj.crud.upload.AUploadImage;
+import axj.db.an.AEntity;
 import axj.db.an.AId;
+import axj.valid.an.Required;
 
 /**
  * 梵音
  */
 @AMenu({@AMenu.Menu("多媒体信息管理"), @AMenu.Menu("梵音")})
+@AEntity
 public class TMusic {
 
     @ALa("编号")
@@ -16,16 +21,23 @@ public class TMusic {
     @AEdit(meta = "width:100")
     private Integer id;
 
+    @Required
     @ALa("音乐名称")
     private String name;
 
     @ALa("音乐类型")
     private Integer type;
 
+    @Required
     @ALa("封面地址")
+    @AUploadImage
+    @AUpload
     private String cover;
 
+    @Required
     @ALa("音乐地址")
+    @AEdit
+    @AUpload(exts = "mp3,wma,wav,ogg")
     private String address;
 
     @ALa("播放次数")
