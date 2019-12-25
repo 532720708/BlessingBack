@@ -7,12 +7,14 @@ import axj.crud.an.AUpload;
 import axj.crud.upload.AUploadImage;
 import axj.db.an.AEntity;
 import axj.db.an.AId;
+import axj.db.an.ARefer;
 import axj.valid.an.Required;
 
 /**
  * 视频
  */
-@AMenu({@AMenu.Menu("多媒体信息管理"), @AMenu.Menu("视频")})
+@AEdit.EType(order = "id>")
+@AMenu({@AMenu.Menu("多媒体信息管理"), @AMenu.Menu("视频列表")})
 @AEntity
 public class TVideo {
 
@@ -23,14 +25,10 @@ public class TVideo {
 
     @Required
     @ALa("视频名称")
+    @AEdit(group = AEdit.List)
     private String name;
 
-
-    @ALa("视频类型")
-    private Integer type;
-
     @Required
-
     @ALa("封面地址")
     @AUploadImage
     @AUpload
@@ -43,7 +41,14 @@ public class TVideo {
     private String address;
 
     @ALa("播放次数")
+    @AEdit(group = AEdit.List)
     private Integer count;
+
+    @Required
+    @ALa("视频分类")
+    @AEdit(group = AEdit.List)
+    @ARefer
+    private TVideoCat type;
 
     public Integer getId() {
         return id;
@@ -61,11 +66,11 @@ public class TVideo {
         this.name = name;
     }
 
-    public Integer getType() {
+    public TVideoCat getType() {
         return type;
     }
 
-    public void setType(Integer type) {
+    public void setType(TVideoCat type) {
         this.type = type;
     }
 

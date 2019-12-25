@@ -1,4 +1,4 @@
-package axj.ap.entity.temple;
+package axj.ap.entity.media;
 
 import axj.an.ALa;
 import axj.an.AMenu;
@@ -8,12 +8,11 @@ import axj.db.an.AId;
 import axj.valid.an.Required;
 
 /**
- * 祈愿功能表
+ *
  */
-@AMenu({@AMenu.Menu("寺庙信息管理"), @AMenu.Menu("供奉类型")})
+@AMenu({@AMenu.Menu("多媒体信息管理"), @AMenu.Menu("佛经分类管理")})
 @AEntity
-public class TFunc {
-
+public class TScriptureCat {
     @ALa("编号")
     @AId(auto = true)
     @AEdit(meta = "width:100")

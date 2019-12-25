@@ -7,12 +7,13 @@ import axj.crud.an.AHtml;
 import axj.db.an.AColumn;
 import axj.db.an.AEntity;
 import axj.db.an.AId;
+import axj.db.an.ARefer;
 import axj.valid.an.Required;
 
 /**
  * 佛经
  */
-@AMenu({@AMenu.Menu("多媒体信息管理"), @AMenu.Menu("佛经")})
+@AMenu({@AMenu.Menu("多媒体信息管理"), @AMenu.Menu("佛经列表")})
 @AEntity
 public class TScripture {
 
@@ -23,6 +24,7 @@ public class TScripture {
 
     @Required
     @ALa("佛经名称")
+    @AEdit(group = AEdit.List)
     private String name;
 
     @Required
@@ -35,6 +37,12 @@ public class TScripture {
     @AHtml
     @AColumn(len = 409600)
     private String translation;
+
+    @Required
+    @ALa("佛经分类")
+    @AEdit(group = AEdit.List)
+    @ARefer
+    private TVideoCat type;
 
     public Integer getId() {
         return id;

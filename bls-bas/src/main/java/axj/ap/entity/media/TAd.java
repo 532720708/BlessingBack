@@ -1,4 +1,4 @@
-package axj.ap.entity;
+package axj.ap.entity.media;
 
 import axj.an.ALa;
 import axj.an.AMenu;
@@ -9,7 +9,7 @@ import axj.db.an.AEntity;
 import axj.db.an.AId;
 import axj.valid.an.Required;
 
-@AMenu({@AMenu.Menu("轮播")})
+@AMenu({@AMenu.Menu("多媒体信息管理"), @AMenu.Menu("轮播")})
 @AEntity
 public class TAd {
     @ALa("编号")
@@ -33,6 +33,7 @@ public class TAd {
 
     @Required
     @ALa("插入时间")
+    @AEdit(group = AEdit.List, type = "dateTime")
     private Integer timestamp;
 
     public Integer getId() {

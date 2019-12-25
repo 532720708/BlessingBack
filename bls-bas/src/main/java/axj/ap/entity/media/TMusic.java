@@ -7,12 +7,14 @@ import axj.crud.an.AUpload;
 import axj.crud.upload.AUploadImage;
 import axj.db.an.AEntity;
 import axj.db.an.AId;
+import axj.db.an.ARefer;
 import axj.valid.an.Required;
 
 /**
  * 梵音
  */
-@AMenu({@AMenu.Menu("多媒体信息管理"), @AMenu.Menu("梵音")})
+@AEdit.EType(order = "id>")
+@AMenu({@AMenu.Menu("多媒体信息管理"), @AMenu.Menu("音乐列表")})
 @AEntity
 public class TMusic {
 
@@ -24,9 +26,6 @@ public class TMusic {
     @Required
     @ALa("音乐名称")
     private String name;
-
-    @ALa("音乐类型")
-    private Integer type;
 
     @Required
     @ALa("封面地址")
@@ -42,6 +41,12 @@ public class TMusic {
 
     @ALa("播放次数")
     private Integer count;
+
+    @Required
+    @ALa("音乐分类")
+    @AEdit(group = AEdit.List)
+    @ARefer
+    private Integer type;
 
     public Integer getId() {
         return id;

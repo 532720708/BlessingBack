@@ -1,6 +1,6 @@
 package axj.ap.dao;
 
-import axj.ap.entity.TAd;
+import axj.ap.entity.media.TAd;
 import axj.db.OSess;
 
 import java.util.List;

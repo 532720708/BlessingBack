@@ -18,10 +18,12 @@ public class TBuddha {
 
     @Required
     @ALa("佛像名称")
+    @AEdit(group = AEdit.List)
     private String funcName;
 
     //此处地址就是佛像对应的一套图片的地址
     @ALa("佛像图片库")
+    @AEdit(group = AEdit.List)
     private String url;
 
     public Integer getId() {

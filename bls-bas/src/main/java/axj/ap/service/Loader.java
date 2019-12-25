@@ -4,8 +4,8 @@ import axj.ap.dao.AdDao;
 import axj.ap.dao.ArticleDao;
 import axj.ap.dao.CityDao;
 import axj.ap.dao.ScriptureDao;
-import axj.ap.entity.TAd;
 import axj.ap.entity.TCity;
+import axj.ap.entity.media.TAd;
 import axj.ap.entity.media.TArticle;
 import axj.ap.entity.media.TScripture;
 
