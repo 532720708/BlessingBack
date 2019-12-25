@@ -23,7 +23,7 @@ public class TEntity {
 
     @ALa("名称")
     @AEdit(group = AEdit.List)
-    private String title;
+    private String name;
 
     @ALa("介绍")
     @AEdit(group = AEdit.List)
@@ -68,12 +68,12 @@ public class TEntity {
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getName() {
+        return name;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getDesc() {

@@ -1,6 +1,6 @@
 package axj.ap.service;
 
-import axj.ap.entity.pray.PrayBehavior;
+import axj.ap.entity.interactive.PrayBehavior;
 import axj.db.OSess;
 
 public class PrayCommit {

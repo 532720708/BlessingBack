@@ -4,11 +4,13 @@ package axj.ap.entity.temple;
 import axj.an.ALa;
 import axj.an.AMenu;
 import axj.crud.an.AEdit;
+import axj.crud.an.AUpload;
+import axj.crud.upload.AUploadImage;
 import axj.db.an.AEntity;
 import axj.db.an.AId;
 import axj.valid.an.Required;
 
-@AMenu({@AMenu.Menu("寺庙信息管理"), @AMenu.Menu("佛像列表")})
+@AMenu({@AMenu.Menu("寺庙信息管理"), @AMenu.Menu("佛像类型")})
 @AEntity
 public class TBuddha {
     @ALa("编号")
@@ -21,9 +23,10 @@ public class TBuddha {
     @AEdit(group = AEdit.List)
     private String funcName;
 
-    //此处地址就是佛像对应的一套图片的地址
-    @ALa("佛像图片库")
-    @AEdit(group = AEdit.List)
+    @Required
+    @ALa("佛像图片")
+    @AUploadImage
+    @AUpload
     private String url;
 
     public Integer getId() {

@@ -1,4 +1,4 @@
-package axj.ap.entity.checkin;
+package axj.ap.entity.interactive;
 
 import axj.an.ALa;
 import axj.an.AMenu;
@@ -10,7 +10,7 @@ import axj.valid.an.Required;
 /**
  * 用户签到数据库 1-1记录
  */
-@AMenu({@AMenu.Menu("签到信息管理"), @AMenu.Menu("用户签到记录")})
+@AMenu({@AMenu.Menu("互动信息管理"), @AMenu.Menu("用户签到记录")})
 @AEntity
 public class TCheckin {
 

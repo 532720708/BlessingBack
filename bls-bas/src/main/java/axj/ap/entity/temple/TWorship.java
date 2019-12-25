@@ -12,7 +12,7 @@ import axj.valid.an.Required;
  */
 @AMenu({@AMenu.Menu("寺庙信息管理"), @AMenu.Menu("供奉类型")})
 @AEntity
-public class TFunc {
+public class TWorship {
 
     @ALa("编号")
     @AId(auto = true)

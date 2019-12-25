@@ -1,4 +1,4 @@
-package axj.ap.entity.checkin;
+package axj.ap.entity.interactive;
 
 import axj.an.ALa;
 import axj.an.AMenu;
@@ -12,7 +12,7 @@ import axj.valid.an.Required;
 /**
  * 签到库
  */
-@AMenu({@AMenu.Menu("签到信息管理"), @AMenu.Menu("签到库")})
+@AMenu({@AMenu.Menu("互动信息管理"), @AMenu.Menu("签到库")})
 @AEntity
 public class TCheck {
     @ALa("编号")
