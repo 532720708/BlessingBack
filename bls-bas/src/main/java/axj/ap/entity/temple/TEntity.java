@@ -1,5 +1,6 @@
 package axj.ap.entity.temple;
 
+import axj.an.AClass;
 import axj.an.ALa;
 import axj.an.AMenu;
 import axj.crud.an.AEdit;
@@ -8,6 +9,8 @@ import axj.crud.upload.AUploadImage;
 import axj.db.an.AColumn;
 import axj.db.an.AEntity;
 import axj.db.an.AId;
+import axj.valid.an.Required;
+import com.alibaba.fastjson.annotation.JSONField;
 
 /**
  * 寺庙实体
@@ -56,9 +59,12 @@ public class TEntity {
     @AEdit(group = AEdit.List)
     private Float price;
 
+    @Required
     @ALa("佛像功能")
     @AEdit(group = AEdit.List)
-    private String func;
+    @JSONField(serialize = false)
+    @AClass(TBuddha.class)
+    private int[] func;
 
     @ALa("联系电话")
     @AEdit(group = AEdit.List)
@@ -136,11 +142,11 @@ public class TEntity {
         this.price = price;
     }
 
-    public String getFunc() {
+    public int[] getFunc() {
         return func;
     }
 
-    public void setFunc(String func) {
+    public void setFunc(int[] func) {
         this.func = func;
     }
 

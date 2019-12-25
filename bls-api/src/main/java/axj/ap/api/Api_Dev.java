@@ -3,6 +3,7 @@ package axj.ap.api;
 import axj.an.AEnv;
 import axj.ap.dao.Spider;
 import axj.ap.entity.TCity;
+import axj.ap.entity.interactive.TPrayContent;
 import axj.ap.entity.media.TAd;
 import axj.ap.entity.media.TArticle;
 import axj.ap.entity.media.TScripture;
@@ -127,8 +128,16 @@ public class Api_Dev {
     /**
      * @param str 行为JSON
      */
-    public void pray(String str) {
-        Prayer.commit(str);
+    public void wish(String str) {
+        Prayer.wish(str);
+    }
+
+    public void backWish(String str) {
+        Prayer.backWish(str);
+    }
+
+    public List<TPrayContent> getDefaultPrayContent() {
+        return Prayer.getDefaultPrayContent();
     }
 
 

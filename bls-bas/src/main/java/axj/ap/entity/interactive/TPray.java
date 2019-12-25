@@ -59,50 +59,6 @@ public class TPray {
     @AClass(TWorship.class)
     private int[] worship;
 
-    public int gettEntity() {
-        return tEntity;
-    }
-
-    public void settEntity(int tEntity) {
-        this.tEntity = tEntity;
-    }
-
-    public int gettBuddha() {
-        return tBuddha;
-    }
-
-    public void settBuddha(int tBuddha) {
-        this.tBuddha = tBuddha;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
-
-    public int getEntity() {
-        return tEntity;
-    }
-
-    public void setEntity(int tEntity) {
-        this.tEntity = tEntity;
-    }
-
-    public int getBuddha() {
-        return tBuddha;
-    }
-
-    public void setBuddha(int tBuddha) {
-        this.tBuddha = tBuddha;
-    }
-
-    public void setWorship(int[] worship) {
-        this.worship = worship;
-    }
-
     public Integer getId() {
         return id;
     }
@@ -135,7 +91,35 @@ public class TPray {
         this.wishTime = wishTime;
     }
 
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public int gettEntity() {
+        return tEntity;
+    }
+
+    public void settEntity(int tEntity) {
+        this.tEntity = tEntity;
+    }
+
+    public int gettBuddha() {
+        return tBuddha;
+    }
+
+    public void settBuddha(int tBuddha) {
+        this.tBuddha = tBuddha;
+    }
+
     public int[] getWorship() {
         return worship;
+    }
+
+    public void setWorship(int[] worship) {
+        this.worship = worship;
     }
 }

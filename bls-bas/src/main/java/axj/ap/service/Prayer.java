@@ -2,38 +2,44 @@ package axj.ap.service;
 
 import axj.ap.dao.PrayDao;
 import axj.ap.entity.interactive.TPray;
+import axj.ap.entity.interactive.TPrayContent;
 import com.alibaba.fastjson.JSONObject;
+
+import java.util.List;
 
 public class Prayer {
 
-    public static void commit(String str) {
-        TPray TPray = new TPray();
+    public static void wish(String str) {
+        TPray tPray = new TPray();
         JSONObject jsonObject = JSONObject.parseObject(str);
-        TPray.setUserId(jsonObject.getInteger("userId"));
-        TPray.setPrayTime(jsonObject.getInteger("timestamp"));
-//        prayBehavior.setBuddha();
-
-        PrayDao.commit(TPray);
+        tPray.setUserId(jsonObject.getInteger("userId"));
+        tPray.setPrayTime(jsonObject.getInteger("timestamp"));
+        tPray.settBuddha(jsonObject.getInteger("buddhaId"));
+        tPray.setContent(jsonObject.getString("content"));
+        tPray.setWishTime(0);
+        tPray.settEntity(jsonObject.getInteger("templeId"));
+        tPray.setWorship(StringToInt(jsonObject.getString("worship").split(",")));
+        PrayDao.wish(tPray);
     }
 
-//    public static void commit(String action) {
-//        PrayBehavior prayBehavior = new PrayBehavior();
-//
-//        JSONObject jsonObject = JSONObject.parseObject(action);
-//        prayBehavior.setUserId(jsonObject.getInteger("userId"));
-//        prayBehavior.setKind(jsonObject.getString("kind"));
-//        prayBehavior.setName(jsonObject.getString("name"));
-//        prayBehavior.setContent(jsonObject.getString("content"));
-//        prayBehavior.setGender(jsonObject.getString("gender"));
-//
-//        OSess sess = OSess.source(null).openSess();
-//        try {
-//            OSess.Sor<PrayBehavior> sor = sess.insert(null, prayBehavior);
-//            sor.update();
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        } finally {
-//            sess.close();
-//        }
-//    }
+    public static void backWish(String str) {
+        TPray tPray = new TPray();
+        JSONObject jsonObject = JSONObject.parseObject(str);
+        //TODO tPray.set
+        PrayDao.backWish(tPray);
+
+    }
+
+    public static int[] StringToInt(String[] arrs) {
+
+        int[] ints = new int[arrs.length];
+        for (int i = 0; i < arrs.length; i++) {
+            ints[i] = Integer.parseInt(arrs[i]);
+        }
+        return ints;
+    }
+
+    public static List<TPrayContent> getDefaultPrayContent() {
+        return PrayDao.getDefaultPrayContent();
+    }
 }
