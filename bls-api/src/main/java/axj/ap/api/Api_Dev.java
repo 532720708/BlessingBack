@@ -11,7 +11,6 @@ import axj.ap.entity.temple.TEntity;
 import axj.ap.service.Loader;
 import axj.ap.service.Prayer;
 import axj.ap.service.Searcher;
-import axj.ap.service.TempleList;
 import axj.serv.an.AMapping;
 import axj.serv.an.AServer;
 import axj.serv.an.BBody;
@@ -44,7 +43,7 @@ public class Api_Dev {
      * 获得全部寺庙列表
      */
     public List<TEntity> getAllTempleList() {
-        return TempleList.getAllTempleList();
+        return Loader.getAllTempleList();
     }
 
     /**
@@ -53,7 +52,7 @@ public class Api_Dev {
      * @param num 需要获得的个数
      */
     public List<TEntity> getTopTempleList(String num) {
-        return TempleList.getTopTempleList(num);
+        return Loader.getTopTempleList(num);
     }
 
     /**
@@ -62,7 +61,7 @@ public class Api_Dev {
      * @param pid 省份id
      */
     public List<TEntity> getTempleListByP(String pid) {
-        return TempleList.getTempleListByP(pid);
+        return Loader.getTempleListByP(pid);
     }
 
     /**
@@ -71,7 +70,7 @@ public class Api_Dev {
      * @param id 寺庙id
      */
     public List<TEntity> getTempleListById(String id) {
-        return TempleList.getTempleListById(id);
+        return Loader.getTempleListById(id);
     }
 
     /**

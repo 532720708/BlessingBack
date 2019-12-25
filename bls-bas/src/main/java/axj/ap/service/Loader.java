@@ -1,17 +1,35 @@
 package axj.ap.service;
 
-import axj.ap.dao.AdDao;
-import axj.ap.dao.ArticleDao;
-import axj.ap.dao.CityDao;
-import axj.ap.dao.ScriptureDao;
+import axj.ap.dao.*;
 import axj.ap.entity.TCity;
 import axj.ap.entity.media.TAd;
 import axj.ap.entity.media.TArticle;
 import axj.ap.entity.media.TScripture;
+import axj.ap.entity.temple.TEntity;
 
 import java.util.List;
 
+/**
+ * 内容加载类
+ */
 public class Loader {
+
+    public static List<TEntity> getAllTempleList() {
+        return TempleDao.getAllTempleList();
+    }
+
+    public static List<TEntity> getTopTempleList(String num) {
+        return TempleDao.getTopTempleList(num);
+    }
+
+    public static List<TEntity> getTempleListByP(String pid) {
+        return TempleDao.getTempleListByP(pid);
+    }
+
+    public static List<TEntity> getTempleListById(String id) {
+        return TempleDao.getTempleListById(id);
+    }
+
     public static List<TCity> getCity() {
         return CityDao.getCity();
     }

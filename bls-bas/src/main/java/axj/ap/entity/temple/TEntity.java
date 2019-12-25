@@ -4,6 +4,7 @@ import axj.an.AClass;
 import axj.an.ALa;
 import axj.an.AMenu;
 import axj.crud.an.AEdit;
+import axj.crud.an.AHtml;
 import axj.crud.an.AUpload;
 import axj.crud.upload.AUploadImage;
 import axj.db.an.AColumn;
@@ -30,6 +31,7 @@ public class TEntity {
 
     @ALa("介绍")
     @AEdit(group = AEdit.List)
+    @AHtml
     @AColumn(len = 409600)
     private String desc;
 
