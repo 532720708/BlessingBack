@@ -24,8 +24,8 @@ public class PrayDao {
     public static void backWish(TPray tPray) {
         OSess sess = OSess.source(null).openSess();
         try {
-//            sess.updateWhere(null, TPray.class, new String[]{"articlePrefList", "latest_log_time"},
-//                    "jMemberId = ? ", new Object[]{articlePrefListMap.get(userId).toString(), 1567562648, userId.intValue()});
+            sess.updateWhere(null, TPray.class, new String[]{"wishTime"},
+                    "id = " + tPray.getId(), new Object[]{tPray.getWishTime()});
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -34,13 +34,13 @@ public class PrayDao {
 
     }
 
-    public static List<TPrayContent> getDefaultPrayContent() {
+    public static List<TPrayContent> getDefaultPrayContent(String id) {
         List<TPrayContent> list = new CopyOnWriteArrayList<>();
         OSess sess = OSess.source(null).openSess();
         try {
             list = sess.getAdl().list(
                     TPrayContent.class, sess.conn(),
-                    "select * from TPrayContent limit 5",
+                    "select * from TPrayContent where buddha = " + id + " limit 5",
                     null
             );
         } catch (Exception e) {
@@ -52,4 +52,20 @@ public class PrayDao {
 
     }
 
+    public static List<TPray> getPrayHistory(String userId) {
+        List<TPray> list = new CopyOnWriteArrayList<>();
+        OSess sess = OSess.source(null).openSess();
+        try {
+            list = sess.getAdl().list(
+                    TPray.class, sess.conn(),
+                    "select * from TPray where userId " + userId,
+                    null
+            );
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            sess.close();
+        }
+        return list;
+    }
 }

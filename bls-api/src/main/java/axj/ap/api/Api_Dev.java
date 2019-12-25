@@ -3,6 +3,7 @@ package axj.ap.api;
 import axj.an.AEnv;
 import axj.ap.dao.Spider;
 import axj.ap.entity.TCity;
+import axj.ap.entity.interactive.TPray;
 import axj.ap.entity.interactive.TPrayContent;
 import axj.ap.entity.media.TAd;
 import axj.ap.entity.media.TArticle;
@@ -87,6 +88,12 @@ public class Api_Dev {
         return Loader.getArticle();
     }
 
+    /**
+     * 根据id获得文章
+     *
+     * @param id
+     * @return
+     */
     public List<TArticle> getArticle(String id) {
         return Loader.getArticle(id);
     }
@@ -98,6 +105,12 @@ public class Api_Dev {
         return Loader.getScripture();
     }
 
+    /**
+     * 根据id获得佛经
+     *
+     * @param id
+     * @return
+     */
     public List<TScripture> getScripture(String id) {
         return Loader.getScripture(id);
     }
@@ -120,24 +133,55 @@ public class Api_Dev {
         return Loader.getAd();
     }
 
+    /**
+     * 根据数量获得轮播广告
+     *
+     * @param num
+     * @return
+     */
     public List<TAd> getAd(int num) {
         return Loader.getAd(num);
     }
 
     /**
-     * @param str 行为JSON
+     * 获得默认的祈福语
+     *
+     * @param id 佛像id
+     * @return
+     */
+    public List<TPrayContent> getDefaultPrayContent(String id) {
+        return Prayer.getDefaultPrayContent(id);
+    }
+
+    /**
+     * 祈福
+     *
+     * @param str 祈祷行为JSON，带装了1个TPray的JSONObject，具体KV看wish()方法
      */
     public void wish(String str) {
         Prayer.wish(str);
     }
 
+    /**
+     * 还愿
+     *
+     * @param str 历史记录JSON,带装了多个JSONObject的JSONArray
+     *            每个JSONObject只需带getPrayHistory的主键和timestamp
+     *            具体KV看backWish()方法
+     */
     public void backWish(String str) {
         Prayer.backWish(str);
     }
 
-    public List<TPrayContent> getDefaultPrayContent() {
-        return Prayer.getDefaultPrayContent();
-    }
 
+    /**
+     * 获得用户pray记录
+     *
+     * @param userId
+     * @return
+     */
+    public List<TPray> getPrayHistory(String userId) {
+        return Loader.getPrayHistory(userId);
+    }
 
 }

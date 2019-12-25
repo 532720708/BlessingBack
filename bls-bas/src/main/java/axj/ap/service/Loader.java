@@ -2,6 +2,7 @@ package axj.ap.service;
 
 import axj.ap.dao.*;
 import axj.ap.entity.TCity;
+import axj.ap.entity.interactive.TPray;
 import axj.ap.entity.media.TAd;
 import axj.ap.entity.media.TArticle;
 import axj.ap.entity.media.TScripture;
@@ -58,5 +59,7 @@ public class Loader {
         return AdDao.getAdList(num);
     }
 
-
+    public static List<TPray> getPrayHistory(String userId) {
+        return PrayDao.getPrayHistory(userId);
+    }
 }

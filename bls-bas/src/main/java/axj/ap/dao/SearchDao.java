@@ -19,7 +19,7 @@ public class SearchDao {
         try {
             scriptureList = sess.getAdl().list(
                     TScripture.class, sess.conn(),
-                    "select * from TScripture where name like " + str,
+                    "select * from TScripture where name like '%" + str + "%'",
                     null
             );
         } catch (Exception e) {
@@ -36,7 +36,7 @@ public class SearchDao {
         try {
             templeEntityList = sess.getAdl().list(
                     TEntity.class, sess.conn(),
-                    "select * from TEntity where title like " + str,
+                    "select * from TEntity where name like '%" + str + "%'",
                     null
             );
         } catch (Exception e) {
