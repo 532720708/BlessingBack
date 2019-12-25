@@ -1,5 +1,6 @@
 package axj.ap.entity.media;
 
+import axj.an.AClass;
 import axj.an.ALa;
 import axj.an.AMenu;
 import axj.crud.an.AEdit;
@@ -7,13 +8,12 @@ import axj.crud.an.AUpload;
 import axj.crud.upload.AUploadImage;
 import axj.db.an.AEntity;
 import axj.db.an.AId;
-import axj.db.an.ARefer;
 import axj.valid.an.Required;
+import com.alibaba.fastjson.annotation.JSONField;
 
 /**
  * 视频
  */
-@AEdit.EType(order = "id>")
 @AMenu({@AMenu.Menu("多媒体信息管理"), @AMenu.Menu("视频列表")})
 @AEntity
 public class TVideo {
@@ -32,12 +32,13 @@ public class TVideo {
     @ALa("封面地址")
     @AUploadImage
     @AUpload
+    @AEdit(group = AEdit.List)
     private String cover;
 
     @Required
     @ALa("视频地址")
-    @AEdit
     @AUpload(exts = "mp4,flv,ogg")
+    @AEdit(group = AEdit.List)
     private String address;
 
     @ALa("播放次数")
@@ -45,10 +46,11 @@ public class TVideo {
     private Integer count;
 
     @Required
-    @ALa("视频分类")
+    @ALa("音乐分类")
     @AEdit(group = AEdit.List)
-    @ARefer
-    private TVideoCat type;
+    @JSONField(serialize = false)
+    @AClass(TVideoCat.class)
+    private int[] vedeoCatId;
 
     public Integer getId() {
         return id;
@@ -66,12 +68,12 @@ public class TVideo {
         this.name = name;
     }
 
-    public TVideoCat getType() {
-        return type;
+    public int[] getVedeoCatId() {
+        return vedeoCatId;
     }
 
-    public void setType(TVideoCat type) {
-        this.type = type;
+    public void setVedeoCatId(int[] vedeoCatId) {
+        this.vedeoCatId = vedeoCatId;
     }
 
     public String getCover() {

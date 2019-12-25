@@ -1,11 +1,13 @@
 package axj.ap.entity.interactive;
 
+import axj.an.AClass;
 import axj.an.ALa;
 import axj.an.AMenu;
 import axj.crud.an.AEdit;
 import axj.db.an.AEntity;
 import axj.db.an.AId;
 import axj.valid.an.Required;
+import com.alibaba.fastjson.annotation.JSONField;
 
 /**
  * 用户签到数据库 1-1记录
@@ -21,15 +23,20 @@ public class TCheckin {
 
     @Required
     @ALa("用户ID")
+    @AEdit(group = AEdit.List)
     private Integer userId;
 
     @Required
     @ALa("签到时间")
+    @AEdit(group = AEdit.List)
     private Integer timestamp;
 
     @Required
-    @ALa("签号id")
-    private Integer checkinId;
+    @ALa("签到库")
+    @AEdit(group = AEdit.List)
+    @JSONField(serialize = false)
+    @AClass(TCheck.class)
+    private int checkinId;
 
     public Integer getId() {
         return id;
@@ -55,11 +62,11 @@ public class TCheckin {
         this.timestamp = timestamp;
     }
 
-    public Integer getCheckinId() {
+    public int getCheckinId() {
         return checkinId;
     }
 
-    public void setCheckinId(Integer checkinId) {
+    public void setCheckinId(int checkinId) {
         this.checkinId = checkinId;
     }
 }

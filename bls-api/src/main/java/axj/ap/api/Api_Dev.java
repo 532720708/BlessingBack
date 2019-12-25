@@ -8,7 +8,7 @@ import axj.ap.entity.media.TArticle;
 import axj.ap.entity.media.TScripture;
 import axj.ap.entity.temple.TEntity;
 import axj.ap.service.Loader;
-import axj.ap.service.PrayCommit;
+import axj.ap.service.Prayer;
 import axj.ap.service.Searcher;
 import axj.ap.service.TempleList;
 import axj.serv.an.AMapping;
@@ -111,10 +111,6 @@ public class Api_Dev {
         return Searcher.getSearchResult(str);
     }
 
-    public void pray(String prayBehaviorString) {
-        PrayCommit.commit(prayBehaviorString);
-    }
-
     /**
      * 获得轮播广告
      *
@@ -127,5 +123,13 @@ public class Api_Dev {
     public List<TAd> getAd(int num) {
         return Loader.getAd(num);
     }
+
+    /**
+     * @param str 行为JSON
+     */
+    public void pray(String str) {
+        Prayer.commit(str);
+    }
+
 
 }

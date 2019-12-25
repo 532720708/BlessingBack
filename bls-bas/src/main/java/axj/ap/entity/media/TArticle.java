@@ -1,5 +1,6 @@
 package axj.ap.entity.media;
 
+import axj.an.AClass;
 import axj.an.ALa;
 import axj.an.AMenu;
 import axj.crud.an.AEdit;
@@ -7,13 +8,12 @@ import axj.crud.an.AHtml;
 import axj.db.an.AColumn;
 import axj.db.an.AEntity;
 import axj.db.an.AId;
-import axj.db.an.ARefer;
 import axj.valid.an.Required;
+import com.alibaba.fastjson.annotation.JSONField;
 
 /**
  * 首页的文章
  */
-@AEdit.EType(order = "id>")
 @AMenu({@AMenu.Menu("多媒体信息管理"), @AMenu.Menu("文章列表")})
 @AEntity
 public class TArticle {
@@ -25,7 +25,6 @@ public class TArticle {
 
     @Required
     @ALa("文章标题")
-    @AColumn(len = 409600)
     @AEdit(group = AEdit.List)
     private String title;
 
@@ -43,9 +42,9 @@ public class TArticle {
     @Required
     @ALa("文章分类")
     @AEdit(group = AEdit.List)
-    @ARefer
-    private TArticleCat articleCat;
-
+    @JSONField(serialize = false)
+    @AClass(TArticleCat.class)
+    private int[] articleCatId;
 
     public String getTitle() {
         return title;
@@ -63,12 +62,12 @@ public class TArticle {
         this.hot = hot;
     }
 
-    public TArticleCat getArticleCat() {
-        return articleCat;
+    public int[] getArticleCatId() {
+        return articleCatId;
     }
 
-    public void setArticleCat(TArticleCat articleCat) {
-        this.articleCat = articleCat;
+    public void setArticleCatId(int[] articleCatId) {
+        this.articleCatId = articleCatId;
     }
 
     public Integer getId() {

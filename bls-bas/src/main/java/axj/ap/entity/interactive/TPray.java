@@ -1,14 +1,15 @@
 package axj.ap.entity.interactive;
 
+import axj.an.AClass;
 import axj.an.ALa;
 import axj.an.AMenu;
 import axj.ap.entity.temple.TBuddha;
 import axj.ap.entity.temple.TEntity;
 import axj.ap.entity.temple.TWorship;
 import axj.crud.an.AEdit;
+import axj.db.an.AColumn;
 import axj.db.an.AEntity;
 import axj.db.an.AId;
-import axj.db.an.ARefer;
 import axj.valid.an.Required;
 
 /**
@@ -16,7 +17,7 @@ import axj.valid.an.Required;
  */
 @AMenu({@AMenu.Menu("互动信息管理"), @AMenu.Menu("用户祈福记录")})
 @AEntity
-public class PrayBehavior {
+public class TPray {
 
     @ALa("祈福编号")
     @AId(auto = true)
@@ -35,40 +36,70 @@ public class PrayBehavior {
     private Integer wishTime;
 
     @Required
-    @ALa("寺庙")
+    @ALa("祈福内容")
+    @AColumn(len = 409600)
     @AEdit(group = AEdit.List)
-    @ARefer
-    private TEntity tEntity;
+    private String content;
 
+    @ALa("寺庙")
     @Required
-    @ALa("佛像")
     @AEdit(group = AEdit.List)
-    @ARefer
-    private TBuddha tBuddha;
+    @AClass(TEntity.class)
+    private int tEntity;
+
+    @ALa("佛像")
+    @Required
+    @AEdit(group = AEdit.List)
+    @AClass(TBuddha.class)
+    private int tBuddha;
 
     @Required
     @ALa("供奉")
     @AEdit(group = AEdit.List)
-    @ARefer
-    private TWorship worship;
+    @AClass(TWorship.class)
+    private int[] worship;
 
-    public TEntity gettEntity() {
+    public int gettEntity() {
         return tEntity;
     }
 
-    public void settEntity(TEntity tEntity) {
+    public void settEntity(int tEntity) {
         this.tEntity = tEntity;
     }
 
-    public TBuddha gettBuddha() {
+    public int gettBuddha() {
         return tBuddha;
     }
 
-    public void settBuddha(TBuddha tBuddha) {
+    public void settBuddha(int tBuddha) {
         this.tBuddha = tBuddha;
     }
 
-    public void setWorship(TWorship worship) {
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public int getEntity() {
+        return tEntity;
+    }
+
+    public void setEntity(int tEntity) {
+        this.tEntity = tEntity;
+    }
+
+    public int getBuddha() {
+        return tBuddha;
+    }
+
+    public void setBuddha(int tBuddha) {
+        this.tBuddha = tBuddha;
+    }
+
+    public void setWorship(int[] worship) {
         this.worship = worship;
     }
 
@@ -104,7 +135,7 @@ public class PrayBehavior {
         this.wishTime = wishTime;
     }
 
-    public TWorship getWorship() {
+    public int[] getWorship() {
         return worship;
     }
 }

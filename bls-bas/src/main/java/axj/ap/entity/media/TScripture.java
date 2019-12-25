@@ -1,5 +1,6 @@
 package axj.ap.entity.media;
 
+import axj.an.AClass;
 import axj.an.ALa;
 import axj.an.AMenu;
 import axj.crud.an.AEdit;
@@ -7,8 +8,8 @@ import axj.crud.an.AHtml;
 import axj.db.an.AColumn;
 import axj.db.an.AEntity;
 import axj.db.an.AId;
-import axj.db.an.ARefer;
 import axj.valid.an.Required;
+import com.alibaba.fastjson.annotation.JSONField;
 
 /**
  * 佛经
@@ -31,18 +32,21 @@ public class TScripture {
     @ALa("原文")
     @AHtml
     @AColumn(len = 409600)
+    @AEdit(group = AEdit.List)
     private String original;
 
     @ALa("译文")
     @AHtml
     @AColumn(len = 409600)
+    @AEdit(group = AEdit.List)
     private String translation;
 
     @Required
     @ALa("佛经分类")
     @AEdit(group = AEdit.List)
-    @ARefer
-    private TVideoCat type;
+    @JSONField(serialize = false)
+    @AClass(TScriptureCat.class)
+    private int[] scriptureCatId;
 
     public Integer getId() {
         return id;

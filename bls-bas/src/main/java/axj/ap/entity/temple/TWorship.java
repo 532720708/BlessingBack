@@ -7,9 +7,6 @@ import axj.db.an.AEntity;
 import axj.db.an.AId;
 import axj.valid.an.Required;
 
-/**
- * 祈愿功能表
- */
 @AMenu({@AMenu.Menu("寺庙信息管理"), @AMenu.Menu("供奉类型")})
 @AEntity
 public class TWorship {

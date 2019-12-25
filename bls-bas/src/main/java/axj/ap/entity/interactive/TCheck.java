@@ -24,10 +24,12 @@ public class TCheck {
     @ALa("签到图片")
     @AUploadImage
     @AUpload
+    @AEdit(group = AEdit.List)
     private String image;
 
     @Required
     @ALa("签到内容")
+    @AEdit(group = AEdit.List)
     private String content;
 
     public Integer getId() {

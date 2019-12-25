@@ -1,5 +1,6 @@
 package axj.ap.entity.media;
 
+import axj.an.AClass;
 import axj.an.ALa;
 import axj.an.AMenu;
 import axj.crud.an.AEdit;
@@ -7,13 +8,12 @@ import axj.crud.an.AUpload;
 import axj.crud.upload.AUploadImage;
 import axj.db.an.AEntity;
 import axj.db.an.AId;
-import axj.db.an.ARefer;
 import axj.valid.an.Required;
+import com.alibaba.fastjson.annotation.JSONField;
 
 /**
  * 梵音
  */
-@AEdit.EType(order = "id>")
 @AMenu({@AMenu.Menu("多媒体信息管理"), @AMenu.Menu("音乐列表")})
 @AEntity
 public class TMusic {
@@ -25,28 +25,32 @@ public class TMusic {
 
     @Required
     @ALa("音乐名称")
+    @AEdit(group = AEdit.List)
     private String name;
 
     @Required
-    @ALa("封面地址")
+    @ALa("封面图片")
     @AUploadImage
     @AUpload
+    @AEdit(group = AEdit.List)
     private String cover;
 
     @Required
-    @ALa("音乐地址")
-    @AEdit
+    @ALa("音乐文件")
+    @AEdit(group = AEdit.List)
     @AUpload(exts = "mp3,wma,wav,ogg")
     private String address;
 
     @ALa("播放次数")
+    @AEdit(group = AEdit.List)
     private Integer count;
 
     @Required
     @ALa("音乐分类")
     @AEdit(group = AEdit.List)
-    @ARefer
-    private Integer type;
+    @JSONField(serialize = false)
+    @AClass(TMusicCat.class)
+    private int[] musicCatId;
 
     public Integer getId() {
         return id;
@@ -64,12 +68,12 @@ public class TMusic {
         this.name = name;
     }
 
-    public Integer getType() {
-        return type;
+    public int[] getMusicCatId() {
+        return musicCatId;
     }
 
-    public void setType(Integer type) {
-        this.type = type;
+    public void setMusicCatId(int[] musicCatId) {
+        this.musicCatId = musicCatId;
     }
 
     public String getCover() {

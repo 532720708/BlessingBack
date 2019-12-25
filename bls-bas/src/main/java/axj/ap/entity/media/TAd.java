@@ -19,16 +19,19 @@ public class TAd {
 
     @Required
     @ALa("广告名称")
+    @AEdit(group = AEdit.List)
     private String name;
 
     @Required
     @ALa("广告图片")
     @AUploadImage
     @AUpload
+    @AEdit(group = AEdit.List)
     private String image;
 
     @Required
     @ALa("广告超链接")
+    @AEdit(group = AEdit.List)
     private String url;
 
     @Required

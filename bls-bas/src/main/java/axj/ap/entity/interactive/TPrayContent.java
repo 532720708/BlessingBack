@@ -1,34 +1,25 @@
-package axj.ap.entity.temple;
-
+package axj.ap.entity.interactive;
 
 import axj.an.ALa;
 import axj.an.AMenu;
 import axj.crud.an.AEdit;
-import axj.crud.an.AUpload;
-import axj.crud.upload.AUploadImage;
 import axj.db.an.AEntity;
 import axj.db.an.AId;
 import axj.valid.an.Required;
 
-@AMenu({@AMenu.Menu("寺庙信息管理"), @AMenu.Menu("佛像类型")})
+@AMenu({@AMenu.Menu("互动信息管理"), @AMenu.Menu("用户祈福快捷语")})
 @AEntity
-public class TBuddha {
-    
+public class TPrayContent {
+
     @ALa("编号")
     @AId(auto = true)
     @AEdit(meta = "width:100")
     private Integer id;
 
     @Required
-    @ALa("佛像名称")
     @AEdit(group = AEdit.List)
+    @ALa("名称")
     private String name;
-
-    @Required
-    @ALa("佛像图片")
-    @AUploadImage
-    @AUpload
-    private String url;
 
     public Integer getId() {
         return id;
@@ -44,13 +35,5 @@ public class TBuddha {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
     }
 }

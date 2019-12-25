@@ -45,19 +45,23 @@ public class TEntity {
     @ALa("主图")
     @AUploadImage
     @AUpload
+    @AEdit(group = AEdit.List)
     private String mImg;
 
     @ALa("热度")
+    @AEdit(group = AEdit.List)
     private Integer hot;
 
     @ALa("票价")
+    @AEdit(group = AEdit.List)
     private Float price;
 
-    //JSON
     @ALa("佛像功能")
+    @AEdit(group = AEdit.List)
     private String func;
 
     @ALa("联系电话")
+    @AEdit(group = AEdit.List)
     private String tel;
 
     public Integer getId() {
