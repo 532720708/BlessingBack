@@ -52,6 +52,11 @@ public class TVideo {
     @AClass(TVideoCat.class)
     private int[] vedeoCatId;
 
+    @Required
+    @ALa("上传时间")
+    @AEdit(group = AEdit.List, type = "dateTime")
+    private Integer timestamp;
+
     public Integer getId() {
         return id;
     }

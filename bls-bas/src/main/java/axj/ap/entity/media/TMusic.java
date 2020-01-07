@@ -52,6 +52,11 @@ public class TMusic {
     @AClass(TMusicCat.class)
     private int[] musicCatId;
 
+    @Required
+    @ALa("上传时间")
+    @AEdit(group = AEdit.List, type = "dateTime")
+    private Integer timestamp;
+
     public Integer getId() {
         return id;
     }

@@ -46,6 +46,11 @@ public class TArticle {
     @AClass(TArticleCat.class)
     private int[] articleCatId;
 
+    @Required
+    @ALa("发表时间")
+    @AEdit(group = AEdit.List, type = "dateTime")
+    private Integer timestamp;
+
     public String getTitle() {
         return title;
     }
