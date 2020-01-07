@@ -1,4 +1,4 @@
-package axj.ap.entity.media;
+package axj.ap.entity.comment;
 
 import axj.an.ALa;
 import axj.an.AMenu;

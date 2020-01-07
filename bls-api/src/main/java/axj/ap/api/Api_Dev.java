@@ -3,6 +3,7 @@ package axj.ap.api;
 import axj.an.AEnv;
 import axj.ap.dao.Spider;
 import axj.ap.entity.TCity;
+import axj.ap.entity.comment.TComment;
 import axj.ap.entity.interactive.TPray;
 import axj.ap.entity.interactive.TPrayContent;
 import axj.ap.entity.media.*;
@@ -219,6 +220,19 @@ public class Api_Dev {
      */
     public List<TBuddhistArticle> getBuddhistArticle() {
         return Loader.getBuddhistArticle();
+    }
+
+    /**
+     * 获取评论
+     *
+     * @param userId   用户ID
+     * @param cmtType  评论对象类型ID
+     * @param cmtObjId 评论对象具体ID
+     * @param need     是否需要跟回复 1要0不要
+     * @return
+     */
+    public List<TComment> getComment(String userId, String cmtType, String cmtObjId, Integer need) {
+        return Loader.getCommentList(userId, cmtType, cmtObjId, need);
     }
 
 }

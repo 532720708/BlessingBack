@@ -1,4 +1,4 @@
-package axj.ap.entity.media;
+package axj.ap.entity.comment;
 
 import axj.an.AClass;
 import axj.an.ALa;
@@ -39,11 +39,16 @@ public class TComment {
     private int likeCount;
 
     @Required
-    @ALa("评论对象")
+    @ALa("评论对象类型")
     @AEdit(group = AEdit.List)
     @JSONField(serialize = false)
     @AClass(TCommentType.class)
-    private int[] commentType;
+    private int commentType;
+
+    @Required
+    @ALa("评论对象id")
+    @AEdit(group = AEdit.List)
+    private Integer objectId;
 
     @Required
     @ALa("发表时间")
@@ -90,11 +95,11 @@ public class TComment {
         this.likeCount = likeCount;
     }
 
-    public int[] getCommentType() {
+    public int getCommentType() {
         return commentType;
     }
 
-    public void setCommentType(int[] commentType) {
+    public void setCommentType(int commentType) {
         this.commentType = commentType;
     }
 

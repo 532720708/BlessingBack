@@ -2,6 +2,7 @@ package axj.ap.service;
 
 import axj.ap.dao.*;
 import axj.ap.entity.TCity;
+import axj.ap.entity.comment.TComment;
 import axj.ap.entity.interactive.TPray;
 import axj.ap.entity.media.*;
 import axj.ap.entity.temple.TEntity;
@@ -75,5 +76,11 @@ public class Loader {
 
     public static List<TBuddhistArticle> getBuddhistArticle() {
         return ArticleDao.getBuddhistArticle();
+    }
+
+
+    public static List<TComment> getCommentList(String userId, String cmtType, String cmtObjId, Integer need) {
+        return need == 1 ? CmtDao.getCommentList(userId, cmtType, cmtObjId)
+                : CmtDao.getCommentListWithRep(userId, cmtType, cmtObjId);
     }
 }
