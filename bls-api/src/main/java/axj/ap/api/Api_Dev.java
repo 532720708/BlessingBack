@@ -5,9 +5,7 @@ import axj.ap.dao.Spider;
 import axj.ap.entity.TCity;
 import axj.ap.entity.interactive.TPray;
 import axj.ap.entity.interactive.TPrayContent;
-import axj.ap.entity.media.TAd;
-import axj.ap.entity.media.TArticle;
-import axj.ap.entity.media.TScripture;
+import axj.ap.entity.media.*;
 import axj.ap.entity.temple.TEntity;
 import axj.ap.service.Loader;
 import axj.ap.service.Prayer;
@@ -182,6 +180,45 @@ public class Api_Dev {
      */
     public List<TPray> getPrayHistory(String userId) {
         return Loader.getPrayHistory(userId);
+    }
+
+    /**
+     * 根据时间获得诸佛圣诞日
+     *
+     * @param timestamp 根据timestamp前后一个月选出n个
+     * @return
+     */
+    public List<TBirth> getBirth(String timestamp, String n) {
+        return Loader.getBirth(timestamp, n);
+    }
+
+    /**
+     * 获得全部诸佛圣诞日
+     *
+     * @return
+     */
+    public List<TBirth> getBirth() {
+        return Loader.getBirth();
+    }
+
+    /**
+     * 根据时间获得佛学文章，用于首页轮播
+     *
+     * @param count
+     * @return
+     */
+    public List<TBuddhistArticle> getBuddhistArticle(int count) {
+        return Loader.getBuddhistArticle(count);
+    }
+
+    /**
+     * 获得全部佛学文章
+     *
+     * @param
+     * @return
+     */
+    public List<TBuddhistArticle> getBuddhistArticle() {
+        return Loader.getBuddhistArticle();
     }
 
 }

@@ -31,8 +31,9 @@ public class AdDao {
         try {
             AdList = sess.getAdl().list(
                     TAd.class, sess.conn(),
-                    "select * from TAd by timestamp desc limit " + num,
-                    null
+                    "select * from TAd by timestamp desc limit ?",
+                    new String[]{String.valueOf(num)}
+
             );
         } catch (Exception e) {
             e.printStackTrace();

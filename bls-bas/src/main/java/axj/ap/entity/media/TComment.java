@@ -24,11 +24,6 @@ public class TComment {
     private Integer userId;
 
     @Required
-    @ALa("发表时间")
-    @AEdit(group = AEdit.List, type = "dateTime")
-    private Integer timestamp;
-
-    @Required
     @ALa("内容")
     @AEdit(group = AEdit.List)
     private String content;
@@ -50,4 +45,64 @@ public class TComment {
     @AClass(TCommentType.class)
     private int[] commentType;
 
+    @Required
+    @ALa("发表时间")
+    @AEdit(group = AEdit.List, type = "dateTime")
+    private Integer timestamp;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public int getCommentCount() {
+        return commentCount;
+    }
+
+    public void setCommentCount(int commentCount) {
+        this.commentCount = commentCount;
+    }
+
+    public int getLikeCount() {
+        return likeCount;
+    }
+
+    public void setLikeCount(int likeCount) {
+        this.likeCount = likeCount;
+    }
+
+    public int[] getCommentType() {
+        return commentType;
+    }
+
+    public void setCommentType(int[] commentType) {
+        this.commentType = commentType;
+    }
+
+    public Integer getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(Integer timestamp) {
+        this.timestamp = timestamp;
+    }
 }

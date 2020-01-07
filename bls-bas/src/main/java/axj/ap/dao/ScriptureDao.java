@@ -31,8 +31,8 @@ public class ScriptureDao {
         try {
             scriptureList = sess.getAdl().list(
                     TScripture.class, sess.conn(),
-                    "select * from TScripture where id = " + id,
-                    null
+                    "select * from TScripture where id = ?",
+                    new String[]{id}
             );
         } catch (Exception e) {
             e.printStackTrace();

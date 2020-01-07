@@ -1,6 +1,7 @@
 package axj.ap.dao;
 
 import axj.ap.entity.media.TArticle;
+import axj.ap.entity.media.TBuddhistArticle;
 import axj.db.OSess;
 
 import java.util.List;
@@ -30,8 +31,8 @@ public class ArticleDao {
         try {
             articleList = sess.getAdl().list(
                     TArticle.class, sess.conn(),
-                    "select * from TArticle where id = " + id,
-                    null
+                    "select * from TArticle where id = ?",
+                    new String[]{id}
             );
         } catch (Exception e) {
             e.printStackTrace();
@@ -39,5 +40,39 @@ public class ArticleDao {
             sess.close();
         }
         return articleList;
+    }
+
+    public static List<TBuddhistArticle> getBuddhistArticle(int count) {
+        List<TBuddhistArticle> tBuddhistArticles = new CopyOnWriteArrayList<>();
+        OSess sess = OSess.source(null).openSess();
+        try {
+            tBuddhistArticles = sess.getAdl().list(
+                    TBuddhistArticle.class, sess.conn(),
+                    "select * from TBuddhistArticle limit ?",
+                    new String[]{"" + count}
+            );
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            sess.close();
+        }
+        return tBuddhistArticles;
+    }
+
+    public static List<TBuddhistArticle> getBuddhistArticle() {
+        List<TBuddhistArticle> tBuddhistArticles = new CopyOnWriteArrayList<>();
+        OSess sess = OSess.source(null).openSess();
+        try {
+            tBuddhistArticles = sess.getAdl().list(
+                    TBuddhistArticle.class, sess.conn(),
+                    "select * from TBuddhistArticle",
+                    null
+            );
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            sess.close();
+        }
+        return tBuddhistArticles;
     }
 }

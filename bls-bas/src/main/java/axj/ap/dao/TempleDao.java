@@ -32,8 +32,8 @@ public class TempleDao {
         try {
             templeEntityList = sess.getAdl().list(
                     TEntity.class, sess.conn(),
-                    "select * from TEntity order by hot desc limit " + num,
-                    null
+                    "select * from TEntity order by hot desc limit ?",
+                    new String[]{num}
             );
         } catch (Exception e) {
             e.printStackTrace();
@@ -50,13 +50,13 @@ public class TempleDao {
         try {
             tCityList = sess.getAdl().list(
                     TCity.class, sess.conn(),
-                    "SELECT cityname FROM `TCity` where id = " + pid,
-                    null
+                    "SELECT cityname FROM `TCity` where id = ?",
+                    new String[]{pid}
             );
             templeEntityList = sess.getAdl().list(
                     TEntity.class, sess.conn(),
-                    "SELECT * FROM TEntity where province like '" + tCityList.get(0).getCityname() + "%'",
-                    null
+                    "SELECT * FROM TEntity where province like ?",
+                    new String[]{"%" + tCityList.get(0).getCityname() + "%"}
             );
         } catch (Exception e) {
             e.printStackTrace();
@@ -72,8 +72,8 @@ public class TempleDao {
         try {
             templeEntityList = sess.getAdl().list(
                     TEntity.class, sess.conn(),
-                    "select * from TEntity where id = " + id,
-                    null
+                    "select * from TEntity where id = ?",
+                    new String[]{id}
             );
         } catch (Exception e) {
             e.printStackTrace();

@@ -3,9 +3,7 @@ package axj.ap.service;
 import axj.ap.dao.*;
 import axj.ap.entity.TCity;
 import axj.ap.entity.interactive.TPray;
-import axj.ap.entity.media.TAd;
-import axj.ap.entity.media.TArticle;
-import axj.ap.entity.media.TScripture;
+import axj.ap.entity.media.*;
 import axj.ap.entity.temple.TEntity;
 
 import java.util.List;
@@ -61,5 +59,21 @@ public class Loader {
 
     public static List<TPray> getPrayHistory(String userId) {
         return PrayDao.getPrayHistory(userId);
+    }
+
+    public static List<TBirth> getBirth(String timestamp, String n) {
+        return BirthDao.getBirthList(Integer.parseInt(timestamp), n);
+    }
+
+    public static List<TBirth> getBirth() {
+        return BirthDao.getBirthList();
+    }
+
+    public static List<TBuddhistArticle> getBuddhistArticle(int count) {
+        return ArticleDao.getBuddhistArticle(count);
+    }
+
+    public static List<TBuddhistArticle> getBuddhistArticle() {
+        return ArticleDao.getBuddhistArticle();
     }
 }
