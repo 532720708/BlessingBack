@@ -19,7 +19,7 @@ public class TASay {
     @Required
     @ALa("用户id")
     @AEdit(group = AEdit.List)
-    private String userId;
+    private Integer userId;
 
     @Required
     @ALa("发表时间")
