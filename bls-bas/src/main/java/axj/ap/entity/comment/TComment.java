@@ -16,7 +16,7 @@ public class TComment {
     @ALa("编号")
     @AId(auto = true)
     @AEdit(meta = "width:100")
-    private Integer id;
+    private String id;
 
     @Required
     @ALa("用户id")
@@ -43,23 +43,23 @@ public class TComment {
     @AEdit(group = AEdit.List)
     @JSONField(serialize = false)
     @AClass(TCommentType.class)
-    private int commentType;
+    private int cmtType;
 
     @Required
     @ALa("评论对象id")
     @AEdit(group = AEdit.List)
-    private Integer objectId;
+    private Integer cmtObjId;
 
     @Required
     @ALa("发表时间")
     @AEdit(group = AEdit.List, type = "dateTime")
     private Integer timestamp;
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -95,12 +95,12 @@ public class TComment {
         this.likeCount = likeCount;
     }
 
-    public int getCommentType() {
-        return commentType;
+    public int getCmtType() {
+        return cmtType;
     }
 
-    public void setCommentType(int commentType) {
-        this.commentType = commentType;
+    public void setCmtType(int cmtType) {
+        this.cmtType = cmtType;
     }
 
     public Integer getTimestamp() {
@@ -109,5 +109,13 @@ public class TComment {
 
     public void setTimestamp(Integer timestamp) {
         this.timestamp = timestamp;
+    }
+
+    public Integer getCmtObjId() {
+        return cmtObjId;
+    }
+
+    public void setCmtObjId(Integer cmtObjId) {
+        this.cmtObjId = cmtObjId;
     }
 }

@@ -14,7 +14,7 @@ public class AdDao {
         try {
             AdList = sess.getAdl().list(
                     TAd.class, sess.conn(),
-                    "select * from TAd by timestamp desc",
+                    "select * from TAd order by timestamp desc",
                     null
             );
         } catch (Exception e) {
@@ -31,7 +31,7 @@ public class AdDao {
         try {
             AdList = sess.getAdl().list(
                     TAd.class, sess.conn(),
-                    "select * from TAd by timestamp desc limit ?",
+                    "select * from TAd order by timestamp desc limit ?",
                     new Integer[]{num}
 
             );

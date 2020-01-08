@@ -13,7 +13,7 @@ public class BirthDao {
         try {
             birthList = sess.getAdl().list(
                     TBirth.class, sess.conn(),
-                    "select * from TBirth by timestamp asc",
+                    "select * from TBirth order by timestamp asc",
                     null
             );
         } catch (Exception e) {
@@ -32,7 +32,7 @@ public class BirthDao {
                     TBirth.class, sess.conn(),
                     //TODO between
                     "select * from TBirth where " +
-                            "timestamp > ? and timestamp < ? limit ? by timestamp desc",
+                            "timestamp > ? and timestamp < ? limit ? order by timestamp desc",
                     new Integer[]{(timestamp - 30 * 24 * 60 * 60),
                             (timestamp + 30 * 24 * 60 * 60),
                             n}

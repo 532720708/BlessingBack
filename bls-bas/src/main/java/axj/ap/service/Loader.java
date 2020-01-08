@@ -8,6 +8,7 @@ import axj.ap.entity.media.*;
 import axj.ap.entity.temple.TEntity;
 
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * 内容加载类
@@ -79,8 +80,17 @@ public class Loader {
     }
 
 
-    public static List<TComment> getCommentList(String userId, String cmtType, String cmtObjId, Integer need) {
-        return need == 1 ? CmtDao.getCommentList(userId, cmtType, cmtObjId)
-                : CmtDao.getCommentListWithRep(userId, cmtType, cmtObjId);
+    public static List<Object> getCommentList(String cmtType, String cmtObjId, Integer need) {
+        List<Object> result = new CopyOnWriteArrayList<>();
+        List<TComment> commentList = CmtDao.getCommentList(cmtType, cmtObjId);
+        result.add(commentList);
+        if (need == 1) {
+            String[] integers = new String[commentList.size()];
+            for (int i = 0; i < commentList.size(); i++) {
+                integers[i] = commentList.get(i).getId();
+            }
+            result.add(CmtDao.getReplicationList(integers));
+        }
+        return result;
     }
 }
