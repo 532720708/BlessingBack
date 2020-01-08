@@ -25,14 +25,14 @@ public class ArticleDao {
         return articleList;
     }
 
-    public static List<TArticle> getArticle(String id) {
+    public static List<TArticle> getArticle(Integer id) {
         List<TArticle> articleList = new CopyOnWriteArrayList<>();
         OSess sess = OSess.source(null).openSess();
         try {
             articleList = sess.getAdl().list(
                     TArticle.class, sess.conn(),
                     "select * from TArticle where id = ?",
-                    new String[]{id}
+                    new Integer[]{id}
             );
         } catch (Exception e) {
             e.printStackTrace();
@@ -49,7 +49,7 @@ public class ArticleDao {
             tBuddhistArticles = sess.getAdl().list(
                     TBuddhistArticle.class, sess.conn(),
                     "select * from TBuddhistArticle limit ?",
-                    new String[]{"" + count}
+                    new Integer[]{count}
             );
         } catch (Exception e) {
             e.printStackTrace();

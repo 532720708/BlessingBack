@@ -66,14 +66,14 @@ public class TempleDao {
         return templeEntityList;
     }
 
-    public static List<TEntity> getTempleListById(String id) {
+    public static List<TEntity> getTempleListById(Integer id) {
         List<TEntity> templeEntityList = new CopyOnWriteArrayList<>();
         OSess sess = OSess.source(null).openSess();
         try {
             templeEntityList = sess.getAdl().list(
                     TEntity.class, sess.conn(),
                     "select * from TEntity where id = ?",
-                    new String[]{id}
+                    new Integer[]{id}
             );
         } catch (Exception e) {
             e.printStackTrace();

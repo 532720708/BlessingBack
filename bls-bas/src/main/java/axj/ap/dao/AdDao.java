@@ -32,7 +32,7 @@ public class AdDao {
             AdList = sess.getAdl().list(
                     TAd.class, sess.conn(),
                     "select * from TAd by timestamp desc limit ?",
-                    new String[]{String.valueOf(num)}
+                    new Integer[]{num}
 
             );
         } catch (Exception e) {

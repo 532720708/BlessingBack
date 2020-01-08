@@ -44,7 +44,7 @@ public class Prayer {
         return ints;
     }
 
-    public static List<TPrayContent> getDefaultPrayContent(String id) {
-        return PrayDao.getDefaultPrayContent(id);
+    public static List<TPrayContent> getDefaultPrayContent(Integer id, Integer n) {
+        return PrayDao.getDefaultPrayContent(id, n);
     }
 }

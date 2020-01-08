@@ -69,7 +69,7 @@ public class Api_Dev {
      *
      * @param id 寺庙id
      */
-    public List<TEntity> getTempleListById(String id) {
+    public List<TEntity> getTempleListById(Integer id) {
         return Loader.getTempleListById(id);
     }
 
@@ -93,7 +93,7 @@ public class Api_Dev {
      * @param id
      * @return
      */
-    public List<TArticle> getArticle(String id) {
+    public List<TArticle> getArticle(Integer id) {
         return Loader.getArticle(id);
     }
 
@@ -110,7 +110,7 @@ public class Api_Dev {
      * @param id
      * @return
      */
-    public List<TScripture> getScripture(String id) {
+    public List<TScripture> getScripture(Integer id) {
         return Loader.getScripture(id);
     }
 
@@ -145,11 +145,12 @@ public class Api_Dev {
     /**
      * 获得默认的祈福语
      *
-     * @param id 佛像id
+     * @param buddhaId 佛像id
+     * @param n        祈福语条数
      * @return
      */
-    public List<TPrayContent> getDefaultPrayContent(String id) {
-        return Prayer.getDefaultPrayContent(id);
+    public List<TPrayContent> getDefaultPrayContent(Integer buddhaId, Integer n) {
+        return Prayer.getDefaultPrayContent(buddhaId, n);
     }
 
     /**
@@ -179,7 +180,7 @@ public class Api_Dev {
      * @param userId
      * @return
      */
-    public List<TPray> getPrayHistory(String userId) {
+    public List<TPray> getPrayHistory(Integer userId) {
         return Loader.getPrayHistory(userId);
     }
 
@@ -189,7 +190,7 @@ public class Api_Dev {
      * @param timestamp 根据timestamp前后一个月选出n个
      * @return
      */
-    public List<TBirth> getBirth(String timestamp, String n) {
+    public List<TBirth> getBirth(Integer timestamp, Integer n) {
         return Loader.getBirth(timestamp, n);
     }
 

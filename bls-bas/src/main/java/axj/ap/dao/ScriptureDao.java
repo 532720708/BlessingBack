@@ -25,14 +25,14 @@ public class ScriptureDao {
         return scriptureList;
     }
 
-    public static List<TScripture> getScripture(String id) {
+    public static List<TScripture> getScripture(Integer id) {
         List<TScripture> scriptureList = new CopyOnWriteArrayList<>();
         OSess sess = OSess.source(null).openSess();
         try {
             scriptureList = sess.getAdl().list(
                     TScripture.class, sess.conn(),
                     "select * from TScripture where id = ?",
-                    new String[]{id}
+                    new Integer[]{id}
             );
         } catch (Exception e) {
             e.printStackTrace();

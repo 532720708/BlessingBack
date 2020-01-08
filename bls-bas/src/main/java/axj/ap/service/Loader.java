@@ -26,7 +26,7 @@ public class Loader {
         return TempleDao.getTempleListByP(Integer.parseInt(pid));
     }
 
-    public static List<TEntity> getTempleListById(String id) {
+    public static List<TEntity> getTempleListById(Integer id) {
         return TempleDao.getTempleListById(id);
     }
 
@@ -38,7 +38,7 @@ public class Loader {
         return ArticleDao.getArticle();
     }
 
-    public static List<TArticle> getArticle(String id) {
+    public static List<TArticle> getArticle(Integer id) {
         return ArticleDao.getArticle(id);
     }
 
@@ -46,7 +46,7 @@ public class Loader {
         return ScriptureDao.getScripture();
     }
 
-    public static List<TScripture> getScripture(String id) {
+    public static List<TScripture> getScripture(Integer id) {
         return ScriptureDao.getScripture(id);
     }
 
@@ -58,12 +58,12 @@ public class Loader {
         return AdDao.getAdList(num);
     }
 
-    public static List<TPray> getPrayHistory(String userId) {
+    public static List<TPray> getPrayHistory(Integer userId) {
         return PrayDao.getPrayHistory(userId);
     }
 
-    public static List<TBirth> getBirth(String timestamp, String n) {
-        return BirthDao.getBirthList(Integer.parseInt(timestamp), n);
+    public static List<TBirth> getBirth(Integer timestamp, Integer n) {
+        return BirthDao.getBirthList(timestamp, n);
     }
 
     public static List<TBirth> getBirth() {

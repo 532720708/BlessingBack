@@ -24,7 +24,7 @@ public class BirthDao {
         return birthList;
     }
 
-    public static List<TBirth> getBirthList(Integer timestamp, String n) {
+    public static List<TBirth> getBirthList(Integer timestamp, Integer n) {
         List<TBirth> birthList = new CopyOnWriteArrayList<>();
         OSess sess = OSess.source(null).openSess();
         try {
@@ -33,8 +33,8 @@ public class BirthDao {
                     //TODO between
                     "select * from TBirth where " +
                             "timestamp > ? and timestamp < ? limit ? by timestamp desc",
-                    new String[]{String.valueOf((timestamp - 30 * 24 * 60 * 60)),
-                            String.valueOf((timestamp + 30 * 24 * 60 * 60)),
+                    new Integer[]{(timestamp - 30 * 24 * 60 * 60),
+                            (timestamp + 30 * 24 * 60 * 60),
                             n}
 
             );
