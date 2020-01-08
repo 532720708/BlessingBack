@@ -26,14 +26,14 @@ public class TempleDao {
         return templeEntityList;
     }
 
-    public static List<TEntity> getTopTempleList(String num) {
+    public static List<TEntity> getTopTempleList(Integer num) {
         List<TEntity> templeEntityList = new CopyOnWriteArrayList<>();
         OSess sess = OSess.source(null).openSess();
         try {
             templeEntityList = sess.getAdl().list(
                     TEntity.class, sess.conn(),
                     "select * from TEntity order by hot desc limit ?",
-                    new String[]{num}
+                    new Integer[]{num}
             );
         } catch (Exception e) {
             e.printStackTrace();
@@ -43,7 +43,7 @@ public class TempleDao {
         return templeEntityList;
     }
 
-    public static List<TEntity> getTempleListByP(String pid) {
+    public static List<TEntity> getTempleListByP(Integer pid) {
         List<TEntity> templeEntityList = new CopyOnWriteArrayList<>();
         List<TCity> tCityList = new ArrayList<>();
         OSess sess = OSess.source(null).openSess();
@@ -51,7 +51,7 @@ public class TempleDao {
             tCityList = sess.getAdl().list(
                     TCity.class, sess.conn(),
                     "SELECT cityname FROM `TCity` where id = ?",
-                    new String[]{pid}
+                    new Integer[]{pid}
             );
             templeEntityList = sess.getAdl().list(
                     TEntity.class, sess.conn(),

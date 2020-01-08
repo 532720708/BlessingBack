@@ -119,7 +119,7 @@ public class Api_Dev {
      *
      * @return List第一个是temple的JSON，第二个是佛经的JSON
      */
-    public List<String> search(String str) {
+    public List<Object> search(String str) {
         return Searcher.getSearchResult(str);
     }
 

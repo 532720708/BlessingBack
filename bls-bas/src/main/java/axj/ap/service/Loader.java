@@ -19,11 +19,11 @@ public class Loader {
     }
 
     public static List<TEntity> getTopTempleList(String num) {
-        return TempleDao.getTopTempleList(num);
+        return TempleDao.getTopTempleList(Integer.parseInt(num));
     }
 
     public static List<TEntity> getTempleListByP(String pid) {
-        return TempleDao.getTempleListByP(pid);
+        return TempleDao.getTempleListByP(Integer.parseInt(pid));
     }
 
     public static List<TEntity> getTempleListById(String id) {

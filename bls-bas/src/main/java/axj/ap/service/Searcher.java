@@ -7,10 +7,11 @@ import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class Searcher {
-    public static List<String> getSearchResult(String str) {
-        List<String> result = new CopyOnWriteArrayList<>();
-        result.add(JSON.toJSONString(SearchDao.getTemple(str)));
-        result.add(JSON.toJSONString(SearchDao.getScripture(str)));
+    public static List<Object> getSearchResult(String str) {
+        List<Object> result = new CopyOnWriteArrayList<>();
+        System.out.println(JSON.toJSONString(SearchDao.getTemple(str)));
+        result.add(SearchDao.getTemple(str));
+        result.add(SearchDao.getScripture(str));
         return result;
     }
 }
