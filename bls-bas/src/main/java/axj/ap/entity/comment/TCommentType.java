@@ -7,7 +7,7 @@ import axj.db.an.AEntity;
 import axj.db.an.AId;
 import axj.valid.an.Required;
 
-@AMenu({@AMenu.Menu("多媒体信息管理"), @AMenu.Menu("评论分类管理")})
+@AMenu({@AMenu.Menu("评论信息管理"), @AMenu.Menu("评论分类管理")})
 @AEntity
 public class TCommentType {
 

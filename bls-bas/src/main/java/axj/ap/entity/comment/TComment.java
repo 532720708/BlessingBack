@@ -9,7 +9,7 @@ import axj.db.an.AId;
 import axj.valid.an.Required;
 import com.alibaba.fastjson.annotation.JSONField;
 
-@AMenu({@AMenu.Menu("多媒体信息管理"), @AMenu.Menu("评论列表")})
+@AMenu({@AMenu.Menu("评论信息管理"), @AMenu.Menu("评论列表")})
 @AEntity
 public class TComment {
 
