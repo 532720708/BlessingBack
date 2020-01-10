@@ -15,27 +15,22 @@ public class TLike {
     private Integer id;
 
     @ALa("点赞对象id")
-    @AId(auto = true)
     @AEdit(group = AEdit.List)
     private Integer typeId;
 
     @ALa("点赞对象类型")
-    @AId(auto = true)
     @AEdit(group = AEdit.List)
     private Integer type;
 
     @ALa("用户Id")
-    @AId(auto = true)
     @AEdit(group = AEdit.List)
     private Integer userId;
 
     @ALa("状态")
-    @AId(auto = true)
     @AEdit(group = AEdit.List)
     private Integer status;
 
     @ALa("最后更新时间")
-    @AId(auto = true)
     @AEdit(group = AEdit.List)
     private Integer timestamp;
 

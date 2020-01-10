@@ -31,7 +31,7 @@ public class CmtDao {
         try {
             replyList = sess.getAdl().list(
                     TReply.class, sess.conn(),
-                    "SELECT r.* FROM TReply r RIGHT JOIN TComment c ON (r.commentId = c.id and r.commentId in (?))",
+                    "SELECT r.* FROM TReply r INNER JOIN TComment c ON (r.commentId = c.id and r.commentId in (?))",
                     cmtId
             );
         } catch (Exception e) {
